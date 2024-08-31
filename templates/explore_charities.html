@@ -1,222 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Charities</title>
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --background-color: #ecf0f1;
-            --text-color: #34495e;
-            --accent-color: #e74c3c;
-        }
+<!-- templates/explore_charities.html -->
+{% extends "base.html" %} {% block title %}Explore Charities{% endblock %} {%
+block content %}
+<h1 class="text-3xl font-bold mb-4">Explore Charities</h1>
+<div
+  class="filter-section flex justify-between mb-4 w-[75vw] flex justify-center item-center"
+>
+   
+  <form method="post">
+    <input
+      type="text"
+      name="search"
+      placeholder="Search charities..."
+      class="w-full p-2 pl-10 text-sm text-gray-700"
+    />
+    <button type="submit">Search</button>
+  </form>
+   
+  <select id="cause-filter" class="w-full p-2 pl-10 text-sm text-gray-700">
+       
+    <option value="">All Causes</option>
+       
+    <option value="food">Food</option>
+       
+    <option value="education">Education</option>
+       
+    <option value="health">Health</option>
+     
+  </select>
+</div>
+<div class="charities-grid flex flex-wrap justify-center item-center">
+    {% for charity in charities %}  
+  <div class="bg-white rounded-lg shadow-md p-4 w-1/3">
+       <img src="{{ charity.logo }}" class="w-full h-48 object-cover mb-4" />
+       
+    <h3 class="text-[#0e121b] text-lg font-bold mb-2">{{ charity.name }}</h3>
+       
+    <p class="text-gray-600 mb-4">{{ charity.description[:100] }}...</p>
+       <a
+      href="{{ url_for('view_charity', charity_id=charity.id) }}"
+      class="btn btn-primary"
+      >View Details</a
+    >
+       <a
+      target="_blank"
+      href="https://www.google.com/maps/dir/?api=1&origin=216+14th+Ave+Roodepoort+2195&destination={{ charity.location }}&travelmode=driving"
+      class="btn btn-primary"
+      >Get directions</a
+    >
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .filter-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .filter-section input,
-        .filter-section select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .filter-section input {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
-
-        .filter-section select {
-            width: 150px;
-        }
-
-        .charities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .charity-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .charity-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .charity-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .charity-card-content {
-            padding: 20px;
-        }
-
-        .charity-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-
-        .charity-card p {
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #27ae60;
-        }
-
-        .charity-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #7f8c8d;
-        }
-
-        .no-results {
-            text-align: center;
-            grid-column: 1 / -1;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .filter-section {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-section input,
-            .filter-section select {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .charities-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Explore Charities</h1>
-        <div class="filter-section">
-            <input type="text" id="search" placeholder="Search charities...">
-            <select id="cause-filter">
-                <option value="">All Causes</option>
-                <option value="food">Food</option>
-                <option value="education">Education</option>
-                <option value="health">Health</option>
-                <option value="environment">Environment</option>
-                <option value="animals">Animals</option>
-            </select>
-        </div>
-        <div class="charities-grid" id="charities-grid">
-            <!-- Charity cards will be dynamically added here -->
-        </div>
-    </div>
-
-    <script>
-        const charitiesData = [
-            { id: 1, name: "Food for All", cause: "food", description: "Providing meals to those in need across the country.", logo: "https://example.com/food-for-all-logo.jpg", rating: 4.5, donorsCount: 1500 },
-            { id: 2, name: "Educate Tomorrow", cause: "education", description: "Empowering underprivileged children through quality education.", logo: "https://example.com/educate-tomorrow-logo.jpg", rating: 4.8, donorsCount: 2200 },
-            { id: 3, name: "Health for Everyone", cause: "health", description: "Ensuring access to healthcare for all communities.", logo: "https://example.com/health-for-everyone-logo.jpg", rating: 4.2, donorsCount: 1800 },
-            { id: 4, name: "Green Earth Initiative", cause: "environment", description: "Working towards a sustainable and green planet.", logo: "https://example.com/green-earth-logo.jpg", rating: 4.6, donorsCount: 3000 },
-            { id: 5, name: "Animal Rescue League", cause: "animals", description: "Rescuing and rehabilitating animals in distress.", logo: "https://example.com/animal-rescue-logo.jpg", rating: 4.7, donorsCount: 2500 }
-        ];
-
-        function renderCharities(charities) {
-            const charitiesGrid = document.getElementById('charities-grid');
-            charitiesGrid.innerHTML = '';
-
-            if (charities.length === 0) {
-                charitiesGrid.innerHTML = '<div class="no-results">No charities found matching your criteria.</div>';
-                return;
-            }
-
-            charities.forEach(charity => {
-                const charityCard = document.createElement('div');
-                charityCard.className = 'charity-card';
-                charityCard.innerHTML = `
-                    <img src="${charity.logo}" alt="${charity.name} Logo">
-                    <div class="charity-card-content">
-                        <h3>${charity.name}</h3>
-                        <p>${charity.description}</p>
-                        <div class="charity-stats">
-                            <span>⭐ ${charity.rating.toFixed(1)}</span>
-                            <span>👥 ${charity.donorsCount} donors</span>
-                        </div>
-                        <a href="#view-charity/${charity.id}" class="btn">View Details</a>
-                    </div>
-                `;
-                charitiesGrid.appendChild(charityCard);
-            });
-        }
-
-        function filterCharities() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
-            const causeFilter = document.getElementById('cause-filter').value;
-
-            const filteredCharities = charitiesData.filter(charity => 
-                charity.name.toLowerCase().includes(searchTerm) &&
-                (causeFilter === '' || charity.cause === causeFilter)
-            );
-
-            renderCharities(filteredCharities);
-        }
-
-        document.getElementById('search').addEventListener('input', filterCharities);
-        document.getElementById('cause-filter').addEventListener('change', filterCharities);
-
-        // Initial render
-        renderCharities(charitiesData);
-    </script>
-</body>
-</html>
+     
+  </div>
+    {% endfor %}
+</div>
+{% endblock %}

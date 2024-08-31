@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
+import os
 
 app = Flask(__name__)
 
@@ -28,8 +29,74 @@ def share_story():
 def donation_management():
     return render_template('donation_management.html')
 
-@app.route('/explore_charities')
+@app.route('/explore_charities', methods=['GET', 'POST'])
 def explore_charities():
+    with open('charities.json', 'r') as f:
+        charities = json.load(f)
+
+    search_results = []
+    if request.method == 'POST':
+        search_term = request.form.get('search')
+        for item in charities:
+            print(item)
+        search_results = [item for item in charities if search_term.lower() in item["location"].lower()]
+        return render_template('explore_charities.html', charities=search_results)
+
+    return render_template('explore_charities.html', charities=charities)
+
+@app.route('/submit_application', methods=['GET', 'POST'])
+def save_charities():
+    search_results = []
+    if request.method == 'POST':
+        location = request.form.get('location')
+        Organization_Name = request.form.get('name')
+        Mission_Statement = request.form.get('description')
+        Contact_Email = request.form.get('contactEmail')
+        Upload_Logo= request.form.get('logo')
+        if 'logo' not in request.files:
+            return 'No file part'
+        
+        file = request.files['logo']
+     
+        if file.filename == '':
+            return 'No selected file'
+        
+
+
+        if file:
+            filename = file.filename
+            save_path = os.path.join('static', filename)
+            file.save(save_path)
+            org = {
+                "id": 1000,
+                "name": Organization_Name,
+                "logo":save_path,
+                "description": Mission_Statement,
+                "needs": ["Tree saplings", "Volunteers for clean-up drives"],
+                "stories":
+                {
+                "title": "Planting 10,000 trees in urban areas",
+                "content": "Our urban reforestation project has successfully..."
+                },
+                "location":location
+            }
+
+            with open('charities.json', 'r+') as file:
+                data = json.load(file)
+            
+                if isinstance(data, list):
+            
+                    data.append(org)
+                else:
+                    raise ValueError("Expected the root element to be a list")
+                
+                file.seek(0)
+                json.dump(data, file, indent=4)
+                file.truncate()
+
+    with open('charities.json', 'r') as f:
+        charities = json.load(f)
+
     return render_template('explore_charities.html', charities=charities)
 
 @app.route('/login')
@@ -102,5 +169,11 @@ def add_post():
         return redirect(url_for('feed'))
     return render_template('add_post.html')
 
+
+def load_data():
+    with open('charities.json', 'r') as f:
+        return json.load(f)
+    
 if __name__ == '__main__':
+    load_data()
     app.run(debug=True)
