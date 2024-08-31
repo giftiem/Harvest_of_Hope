@@ -1,213 +1,270 @@
 [
-  {
-    "id": 1,
-    "name": "Food for All",
-    "logo": "https://i.pinimg.com/564x/99/55/50/99555040fcf3d734e87d73c7c5195150.jpg",
-    "description": "We provide nutritious meals to those in need in our community.",
-    "needs": ["Non-perishable food items", "Volunteers for food distribution"],
-    "stories": [
-      {
-        "title": "Feeding 1000 families during the pandemic",
-        "content": "During the COVID-19 pandemic, we were able to provide..."
-      }
-    ],
-    "location": "343 Jeff Masemola St, Pretoria Central, Pretoria, 0001"
-  },
-  {
-    "id": 2,
-    "name": "Education Empowerment",
-    "logo": "https://i.pinimg.com/564x/e3/55/1c/e3551c2337fb4aa381c0d39f54e987f7.jpg",
-    "description": "We support underprivileged students with educational resources and mentoring.",
-    "needs": ["School supplies", "Volunteer tutors"],
-    "stories": [
-      {
-        "title": "Helping 100 students graduate high school",
-        "content": "Through our mentoring program, we were able to help..."
-      }
-    ],
-    "location": "Technofin Building, 51 Lebombo Rd, Ashlea Gardens, Pretoria, 0084"
-  },
-  {
-    "id": 3,
-    "name": "Green Earth Initiative",
-    "logo": "https://i.pinimg.com/564x/d9/e8/d4/d9e8d4d4fb5e9eb9d374d12e852fc0db.jpg",
-    "description": "We work to protect the environment through conservation and education.",
-    "needs": ["Tree saplings", "Volunteers for clean-up drives"],
-    "stories": [
-      {
-        "title": "Planting 10,000 trees in urban areas",
-        "content": "Our urban reforestation project has successfully..."
-      }
-    ],
-    "location": "84 Hawk St, Montana Park, Pretoria, 0182"
-  },
-  {
-    "id": 4,
-    "name": "Supper Foundation",
-    "logo": "https://i.pinimg.com/564x/dd/f2/ad/ddf2ad8c2208b61c2966417a10bc71be.jpg",
-    "description": "We focus on uplifting disadvantaged children and communities in Soweto through feeding schemes, educational support, and spiritual guidance.",
-    "needs": ["Food donations", "Volunteers for community outreach"],
-    "stories": [
-      {
-        "title": "Supporting the Community During Tough Times",
-        "content": "We've been able to provide daily meals and support to over 500 children in Soweto..."
-      }
-    ],
-    "location": "123 Vilakazi St, Orlando West, Soweto, 1804"
-  },
-  {
-    "id": 5,
-    "name": "HospiceWits",
-    "logo": "https://i.pinimg.com/564x/91/6b/4b/916b4b1a36863566308932696044c7ac.jpg",
-    "description": "We provide palliative care and support for people with life-threatening illnesses and their families in Johannesburg and Soweto.",
-    "needs": ["Monetary donations", "Volunteers for patient care"],
-    "stories": [
-      {
-        "title": "Providing Comfort During Life\u2019s Final Stages",
-        "content": "Our team has supported over 1,000 patients with compassionate care..."
-      }
-    ],
-    "location": "50 Second Avenue, Houghton, Johannesburg, 2198"
-  },
-  {
-    "id": 6,
-    "name": "Soweto Home for the Aged",
-    "logo": "https://i.pinimg.com/564x/4f/4a/ab/4f4aab11dda82e3554bde2e173e120b8.jpg",
-    "description": "We provide residential care and support services for the elderly, focusing on those who are homeless, destitute, or neglected.",
-    "needs": [
-      "Donations for healthcare supplies",
-      "Volunteers for elderly care"
-    ],
-    "stories": [
-      {
-        "title": "Caring for Our Elders",
-        "content": "Through our care programs, we've been able to improve the lives of over 120 elderly residents..."
-      }
-    ],
-    "location": "3146 Mphuthi St, Central Western Jabavu, Soweto, 1809"
-  },
-  {
-    "id": 7,
-    "name": "harvest",
-    "logo": "https://i.pinimg.com/564x/56/96/1d/56961d30f5168d145cd2d3ef37f56ba2.jpg",
-    "description": "hoping",
-    "needs": ["Tree saplings", "Volunteers for clean-up drives"],
-    "stories": {
-      "title": "Planting 10,000 trees in urban areas",
-      "content": "Our urban reforestation project has successfully..."
+    {
+        "id": 1,
+        "name": "Food for All",
+        "logo": "https://i.pinimg.com/564x/99/55/50/99555040fcf3d734e87d73c7c5195150.jpg",
+        "description": "We provide nutritious meals to those in need in our community.",
+        "needs": [
+            "Non-perishable food items",
+            "Volunteers for food distribution"
+        ],
+        "stories": [
+            {
+                "title": "Feeding 1000 families during the pandemic",
+                "content": "During the COVID-19 pandemic, we were able to provide..."
+            }
+        ],
+        "location": "343 Jeff Masemola St, Pretoria Central, Pretoria, 0001"
     },
-    "location": "3146 Mphuthi Street, Central Western Jabavu, Soweto, 1809, South Africa"
-  },
-  {
-    "id": 8,
-    "name": "Ubuntu Pathways",
-    "logo": "https://i.pinimg.com/564x/c1/b7/9f/c1b79f95b2418c3be71a13ac9fc85b02.jpg",
-    "description": "We provide cradle-to-career support to children and families from vulnerable communities.",
-    "needs": ["School supplies", "Monetary donations"],
-    "stories": [
-      {
-        "title": "Transforming Lives Through Education",
-        "content": "Through our comprehensive care model, we've helped over 400 children achieve their educational goals..."
-      }
-    ],
-    "location": "15 Joe Slovo St, Maboneng Precinct, Johannesburg, 2094"
-  },
-  {
-    "id": 9,
-    "name": "Khulisa Social Solutions",
-    "logo": "https://i.pinimg.com/564x/f6/bd/fc/f6bdfc9184195089d6b88b559f781fdc.jpg",
-    "description": "We provide community upliftment programs focusing on education, justice, and community development.",
-    "needs": ["Educational materials", "Volunteers for mentorship programs"],
-    "stories": [
-      {
-        "title": "Reintegrating Youth Into Society",
-        "content": "Our youth development program has successfully reintegrated 200 young people into society..."
-      }
-    ],
-    "location": "109 Smits St, Fairland, Randburg, 2030"
-  },
-  {
-    "id": 10,
-    "name": "IkamvaYouth",
-    "logo": "https://i.pinimg.com/564x/38/72/30/387230434ecd5f2161a68536bfe6186d.jpg",
-    "description": "We empower young South Africans to take charge of their future by providing academic support, career guidance, and life skills.",
-    "needs": ["Volunteer tutors", "Laptops for e-learning"],
-    "stories": [
-      {
-        "title": "Helping Youth Reach Their Potential",
-        "content": "Through our tutoring and mentoring programs, over 500 students have successfully graduated..."
-      }
-    ],
-    "location": "54 Malibongwe Dr, Linden, Randburg, 2195"
-  },
-  {
-    "id": 11,
-    "name": "Gift of the Givers Foundation",
-    "logo": "https://i.pinimg.com/564x/62/22/ea/6222eab73426b4e3816641662fee5911.jpg",
-    "description": "We are the largest disaster response NGO in Africa, providing humanitarian relief during crises.",
-    "needs": ["Monetary donations", "Volunteers for disaster response"],
-    "stories": [
-      {
-        "title": "Bringing Relief to Flood Victims",
-        "content": "During the recent floods, we provided emergency relief to over 2,000 affected families..."
-      }
-    ],
-    "location": "205 Imam Haron Rd, Lansdowne, Cape Town, 7780 (National coverage including Johannesburg)"
-  },
-  {
-    "id": 12,
-    "name": "Lefika La Phodiso",
-    "logo": "https://i.pinimg.com/736x/46/cc/58/46cc58784ac9a04b7b98ff2d964d535f.jpg",
-    "description": "We use art therapy and psychological support to help vulnerable children and communities heal from trauma.",
-    "needs": ["Art supplies", "Psychologists and art therapists"],
-    "stories": [
-      {
-        "title": "Healing Through Art",
-        "content": "Our art therapy workshops have helped hundreds of children process their emotions and heal..."
-      }
-    ],
-    "location": "18 Joubert St, Braamfontein, Johannesburg, 2001"
-  },
-  {
-    "id": 13,
-    "name": "Alexandra Education Committee (AEC)",
-    "logo": "https://i.pinimg.com/564x/1e/56/81/1e56817dd6ce9d925ca0f5d039d5aeb6.jpg",
-    "description": "We provide scholarships and educational support to high-potential students from disadvantaged backgrounds in Alexandra.",
-    "needs": ["Scholarship funding", "Mentors for students"],
-    "stories": [
-      {
-        "title": "Empowering Future Leaders",
-        "content": "Through our scholarship program, we've helped over 300 students pursue higher education and transform their lives..."
-      }
-    ],
-    "location": "16 Richard Baloyi Ave, Alexandra, Johannesburg, 2090"
-  },
-  {
-    "id": 14,
-    "name": "Thembisa Community Development Trust",
-    "logo": "https://i.pinimg.com/564x/f9/dd/d0/f9ddd05b7c7cef26456d49330862d2ce.jpg",
-    "description": "We focus on uplifting the Thembisa community through education, health, and entrepreneurial support programs.",
-    "needs": ["Educational resources", "Healthcare supplies"],
-    "stories": [
-      {
-        "title": "Supporting Local Entrepreneurs",
-        "content": "Our entrepreneurial support program has empowered over 150 small business owners in Thembisa..."
-      }
-    ],
-    "location": "12 Mbula St, Thembisa, 1632"
-  },
-  {
-    "id": 15,
-    "name": "Thuli Madonsela Foundation",
-    "logo": "https://i.pinimg.com/564x/fd/c2/7f/fdc27f023ca4bcda20ff1a78b93ac4e5.jpg",
-    "description": "We aim to promote social justice and empower communities in Thembisa through education, legal support, and advocacy.",
-    "needs": ["Legal volunteers", "Donations for community programs"],
-    "stories": [
-      {
-        "title": "Championing Social Justice",
-        "content": "Our legal support initiatives have provided over 200 community members with access to justice and legal aid..."
-      }
-    ],
-    "location": "45 Mndebele St, Thembisa, 1632"
-  }
+    {
+        "id": 2,
+        "name": "Education Empowerment",
+        "logo": "https://i.pinimg.com/564x/e3/55/1c/e3551c2337fb4aa381c0d39f54e987f7.jpg",
+        "description": "We support underprivileged students with educational resources and mentoring.",
+        "needs": [
+            "School supplies",
+            "Volunteer tutors"
+        ],
+        "stories": [
+            {
+                "title": "Helping 100 students graduate high school",
+                "content": "Through our mentoring program, we were able to help..."
+            }
+        ],
+        "location": "Technofin Building, 51 Lebombo Rd, Ashlea Gardens, Pretoria, 0084"
+    },
+    {
+        "id": 3,
+        "name": "Green Earth Initiative",
+        "logo": "https://i.pinimg.com/564x/d9/e8/d4/d9e8d4d4fb5e9eb9d374d12e852fc0db.jpg",
+        "description": "We work to protect the environment through conservation and education.",
+        "needs": [
+            "Tree saplings",
+            "Volunteers for clean-up drives"
+        ],
+        "stories": [
+            {
+                "title": "Planting 10,000 trees in urban areas",
+                "content": "Our urban reforestation project has successfully..."
+            }
+        ],
+        "location": "84 Hawk St, Montana Park, Pretoria, 0182"
+    },
+    {
+        "id": 4,
+        "name": "Supper Foundation",
+        "logo": "https://i.pinimg.com/564x/dd/f2/ad/ddf2ad8c2208b61c2966417a10bc71be.jpg",
+        "description": "We focus on uplifting disadvantaged children and communities in Soweto through feeding schemes, educational support, and spiritual guidance.",
+        "needs": [
+            "Food donations",
+            "Volunteers for community outreach"
+        ],
+        "stories": [
+            {
+                "title": "Supporting the Community During Tough Times",
+                "content": "We've been able to provide daily meals and support to over 500 children in Soweto..."
+            }
+        ],
+        "location": "123 Vilakazi St, Orlando West, Soweto, 1804"
+    },
+    {
+        "id": 5,
+        "name": "HospiceWits",
+        "logo": "https://i.pinimg.com/564x/91/6b/4b/916b4b1a36863566308932696044c7ac.jpg",
+        "description": "We provide palliative care and support for people with life-threatening illnesses and their families in Johannesburg and Soweto.",
+        "needs": [
+            "Monetary donations",
+            "Volunteers for patient care"
+        ],
+        "stories": [
+            {
+                "title": "Providing Comfort During Life\u2019s Final Stages",
+                "content": "Our team has supported over 1,000 patients with compassionate care..."
+            }
+        ],
+        "location": "50 Second Avenue, Houghton, Johannesburg, 2198"
+    },
+    {
+        "id": 6,
+        "name": "Soweto Home for the Aged",
+        "logo": "https://i.pinimg.com/564x/4f/4a/ab/4f4aab11dda82e3554bde2e173e120b8.jpg",
+        "description": "We provide residential care and support services for the elderly, focusing on those who are homeless, destitute, or neglected.",
+        "needs": [
+            "Donations for healthcare supplies",
+            "Volunteers for elderly care"
+        ],
+        "stories": [
+            {
+                "title": "Caring for Our Elders",
+                "content": "Through our care programs, we've been able to improve the lives of over 120 elderly residents..."
+            }
+        ],
+        "location": "3146 Mphuthi St, Central Western Jabavu, Soweto, 1809"
+    },
+    {
+        "id": 7,
+        "name": "harvest",
+        "logo": "https://i.pinimg.com/564x/56/96/1d/56961d30f5168d145cd2d3ef37f56ba2.jpg",
+        "description": "hoping",
+        "needs": [
+            "Tree saplings",
+            "Volunteers for clean-up drives"
+        ],
+        "stories": {
+            "title": "Planting 10,000 trees in urban areas",
+            "content": "Our urban reforestation project has successfully..."
+        },
+        "location": "3146 Mphuthi Street, Central Western Jabavu, Soweto, 1809, South Africa"
+    },
+    {
+        "id": 8,
+        "name": "Ubuntu Pathways",
+        "logo": "https://i.pinimg.com/564x/c1/b7/9f/c1b79f95b2418c3be71a13ac9fc85b02.jpg",
+        "description": "We provide cradle-to-career support to children and families from vulnerable communities.",
+        "needs": [
+            "School supplies",
+            "Monetary donations"
+        ],
+        "stories": [
+            {
+                "title": "Transforming Lives Through Education",
+                "content": "Through our comprehensive care model, we've helped over 400 children achieve their educational goals..."
+            }
+        ],
+        "location": "15 Joe Slovo St, Maboneng Precinct, Johannesburg, 2094"
+    },
+    {
+        "id": 9,
+        "name": "Khulisa Social Solutions",
+        "logo": "https://i.pinimg.com/564x/f6/bd/fc/f6bdfc9184195089d6b88b559f781fdc.jpg",
+        "description": "We provide community upliftment programs focusing on education, justice, and community development.",
+        "needs": [
+            "Educational materials",
+            "Volunteers for mentorship programs"
+        ],
+        "stories": [
+            {
+                "title": "Reintegrating Youth Into Society",
+                "content": "Our youth development program has successfully reintegrated 200 young people into society..."
+            }
+        ],
+        "location": "109 Smits St, Fairland, Randburg, 2030"
+    },
+    {
+        "id": 10,
+        "name": "IkamvaYouth",
+        "logo": "https://i.pinimg.com/564x/38/72/30/387230434ecd5f2161a68536bfe6186d.jpg",
+        "description": "We empower young South Africans to take charge of their future by providing academic support, career guidance, and life skills.",
+        "needs": [
+            "Volunteer tutors",
+            "Laptops for e-learning"
+        ],
+        "stories": [
+            {
+                "title": "Helping Youth Reach Their Potential",
+                "content": "Through our tutoring and mentoring programs, over 500 students have successfully graduated..."
+            }
+        ],
+        "location": "54 Malibongwe Dr, Linden, Randburg, 2195"
+    },
+    {
+        "id": 11,
+        "name": "Gift of the Givers Foundation",
+        "logo": "https://i.pinimg.com/564x/62/22/ea/6222eab73426b4e3816641662fee5911.jpg",
+        "description": "We are the largest disaster response NGO in Africa, providing humanitarian relief during crises.",
+        "needs": [
+            "Monetary donations",
+            "Volunteers for disaster response"
+        ],
+        "stories": [
+            {
+                "title": "Bringing Relief to Flood Victims",
+                "content": "During the recent floods, we provided emergency relief to over 2,000 affected families..."
+            }
+        ],
+        "location": "205 Imam Haron Rd, Lansdowne, Cape Town, 7780 (National coverage including Johannesburg)"
+    },
+    {
+        "id": 12,
+        "name": "Lefika La Phodiso",
+        "logo": "https://i.pinimg.com/736x/46/cc/58/46cc58784ac9a04b7b98ff2d964d535f.jpg",
+        "description": "We use art therapy and psychological support to help vulnerable children and communities heal from trauma.",
+        "needs": [
+            "Art supplies",
+            "Psychologists and art therapists"
+        ],
+        "stories": [
+            {
+                "title": "Healing Through Art",
+                "content": "Our art therapy workshops have helped hundreds of children process their emotions and heal..."
+            }
+        ],
+        "location": "18 Joubert St, Braamfontein, Johannesburg, 2001"
+    },
+    {
+        "id": 13,
+        "name": "Alexandra Education Committee (AEC)",
+        "logo": "https://i.pinimg.com/564x/1e/56/81/1e56817dd6ce9d925ca0f5d039d5aeb6.jpg",
+        "description": "We provide scholarships and educational support to high-potential students from disadvantaged backgrounds in Alexandra.",
+        "needs": [
+            "Scholarship funding",
+            "Mentors for students"
+        ],
+        "stories": [
+            {
+                "title": "Empowering Future Leaders",
+                "content": "Through our scholarship program, we've helped over 300 students pursue higher education and transform their lives..."
+            }
+        ],
+        "location": "16 Richard Baloyi Ave, Alexandra, Johannesburg, 2090"
+    },
+    {
+        "id": 14,
+        "name": "Thembisa Community Development Trust",
+        "logo": "https://i.pinimg.com/564x/f9/dd/d0/f9ddd05b7c7cef26456d49330862d2ce.jpg",
+        "description": "We focus on uplifting the Thembisa community through education, health, and entrepreneurial support programs.",
+        "needs": [
+            "Educational resources",
+            "Healthcare supplies"
+        ],
+        "stories": [
+            {
+                "title": "Supporting Local Entrepreneurs",
+                "content": "Our entrepreneurial support program has empowered over 150 small business owners in Thembisa..."
+            }
+        ],
+        "location": "12 Mbula St, Thembisa, 1632"
+    },
+    {
+        "id": 15,
+        "name": "Thuli Madonsela Foundation",
+        "logo": "https://i.pinimg.com/564x/fd/c2/7f/fdc27f023ca4bcda20ff1a78b93ac4e5.jpg",
+        "description": "We aim to promote social justice and empower communities in Thembisa through education, legal support, and advocacy.",
+        "needs": [
+            "Legal volunteers",
+            "Donations for community programs"
+        ],
+        "stories": [
+            {
+                "title": "Championing Social Justice",
+                "content": "Our legal support initiatives have provided over 200 community members with access to justice and legal aid..."
+            }
+        ],
+        "location": "45 Mndebele St, Thembisa, 1632"
+    },
+    {
+        "id": 1000,
+        "name": "Relebogile",
+        "logo": "static/csir2.jpg",
+        "description": "hello",
+        "needs": [
+            "Tree saplings",
+            "Volunteers for clean-up drives"
+        ],
+        "stories": {
+            "title": "Planting 10,000 trees in urban areas",
+            "content": "Our urban reforestation project has successfully..."
+        },
+        "location": "52 Glenhove Rd, Melrose Estate, Johannesburg, 2196"
+    }
 ]
