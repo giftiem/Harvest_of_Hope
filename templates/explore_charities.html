@@ -1,55 +1,49 @@
 <!-- templates/explore_charities.html -->
-{% extends "base.html" %} {% block title %}Explore Charities{% endblock %} {%
-block content %}
-<h1 class="text-3xl font-bold mb-4">Explore Charities</h1>
-<div
-  class="filter-section flex justify-between mb-4 w-[75vw] flex justify-center item-center"
->
-   
-  <form method="post">
+{% extends "base.html" %} 
+{% block title %}Explore Charities{% endblock %} 
+{% block content %}
+<h1 class="text-3xl font-bold mb-6 text-center">Explore Charities</h1>
+
+<div class="filter-section flex justify-between mb-6 w-[75vw] mx-auto">
+  <form method="post" class="flex w-full">
     <input
       type="text"
       name="search"
       placeholder="Search charities..."
-      class="w-full p-2 pl-10 text-sm text-gray-700"
+      class="w-3/4 p-2 pl-4 text-sm text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
-    <button type="submit">Search</button>
+    <button type="submit" class="w-1/4 bg-blue-600 text-white rounded-r-md p-2 hover:bg-blue-700">
+      Search
+    </button>
   </form>
-   
-  <select id="cause-filter" class="w-full p-2 pl-10 text-sm text-gray-700">
-       
-    <option value="">All Causes</option>
-       
-    <option value="food">Food</option>
-       
-    <option value="education">Education</option>
-       
-    <option value="health">Health</option>
-     
-  </select>
-</div>
-<div class="charities-grid flex flex-wrap justify-center item-center">
-    {% for charity in charities %}  
-  <div class="bg-white rounded-lg shadow-md p-4 w-1/3">
-       <img src="{{ charity.logo }}" class="w-full h-48 object-cover mb-4" />
-       
-    <h3 class="text-[#0e121b] text-lg font-bold mb-2">{{ charity.name }}</h3>
-       
-    <p class="text-gray-600 mb-4">{{ charity.description[:100] }}...</p>
-       <a
-      href="{{ url_for('view_charity', charity_id=charity.id) }}"
-      class="btn btn-primary"
-      >View Details</a
-    >
-       <a
-      target="_blank"
-      href="https://www.google.com/maps/dir/?api=1&origin=216+14th+Ave+Roodepoort+2195&destination={{ charity.location }}&travelmode=driving"
-      class="btn btn-primary"
-      >Get directions</a
-    >
 
-     
+  <!-- <select id="cause-filter" class="w-1/4 p-2 ml-4 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <option value="">All Causes</option>
+    <option value="food">Food</option>
+    <option value="education">Education</option>
+    <option value="health">Health</option>
+  </select> -->
+</div>
+
+<div class="charities-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-[75vw] mx-auto">
+  {% for charity in charities %}
+  <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+    <img src="{{ charity.logo }}" class="w-full h-48 object-cover mb-4 rounded-t-lg" />
+
+    <div class="flex-grow">
+      <h3 class="text-[#0e121b] text-xl font-bold mb-2">{{ charity.name }}</h3>
+      <p class="text-gray-600 mb-4">{{ charity.description[:100] }}...</p>
+    </div>
+
+    <div class="flex justify-between mt-4">
+      <a href="{{ url_for('view_charity', charity_id=charity.id) }}" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
+        View Details
+      </a>
+      <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=216+14th+Ave+Roodepoort+2195&destination={{ charity.location }}&travelmode=driving" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
+        Get Directions
+      </a>
+    </div>
   </div>
-    {% endfor %}
+  {% endfor %}
 </div>
 {% endblock %}
