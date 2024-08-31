@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Management</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 15px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .main-content {
+            flex: 3;
+            padding: 20px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #donations-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #donations-table th, #donations-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #donations-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        #donations-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .status-dropdown {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pagination button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .image-upload {
+            margin-top: 20px;
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .stat-card {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            #donations-table, #donations-table thead, #donations-table tbody, #donations-table th, #donations-table td, #donations-table tr {
+                display: block;
+            }
+
+            #donations-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            #donations-table tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+
+            #donations-table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            #donations-table td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>Donation Management</h1>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <h2>Quick Stats</h2>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <h3>Total Monetary Donations</h3>
+                        <p>$<span id="total-money">0</span></p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Food Donations</h3>
+                        <p><span id="total-food">0</span> lbs</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Clothing Donations</h3>
+                        <p><span id="total-clothing">0</span> items</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Donors</h3>
+                        <p><span id="active-donors">0</span></p>
+                    </div>
+                </div>
+                <div class="image-upload">
+                    <h3>Upload Image</h3>
+                    <input type="file" id="image-upload" accept="image/*">
+                    <div class="image-preview" id="image-preview">
+                        <p>No image uploaded</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search donations...">
+                </div>
+                <table id="donations-table">
+                    <thead>
+                        <tr>
+                            <th>Donor</th>
+                            <th>Donation Type</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Donation rows will be dynamically added here -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prev-page" disabled>Previous</button>
+                    <button id="next-page">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const donationsData = [
+            { donor: "John Doe", type: "Cash", quantity: "$100", date: "2023-08-30", status: "Received" },
+            { donor: "Jane Smith", type: "Food", quantity: "50 lbs", date: "2023-08-29", status: "Pending" },
+            { donor: "Bob Johnson", type: "Clothing", quantity: "25 items", date: "2023-08-28", status: "Distributed" },
+            { donor: "Alice Brown", type: "Cash", quantity: "$250", date: "2023-08-27", status: "Received" },
+            { donor: "Charlie Davis", type: "Medical Supplies", quantity: "100 units", date: "2023-08-26", status: "Pending" },
+            { donor: "Eva Wilson", type: "Books", quantity: "75 books", date: "2023-08-25", status: "Distributed" },
+            { donor: "Frank Miller", type: "Cash", quantity: "$500", date: "2023-08-24", status: "Received" },
+            { donor: "Grace Lee", type: "Toys", quantity: "30 toys", date: "2023-08-23", status: "Pending" },
+            { donor: "Henry Taylor", type: "Food", quantity: "100 lbs", date: "2023-08-22", status: "Distributed" },
+            { donor: "Ivy Clark", type: "Cash", quantity: "$150", date: "2023-08-21", status: "Received" },
+        ];
+
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        function renderTable(data) {
+            const tableBody = document.querySelector("#donations-table tbody");
+            tableBody.innerHTML = "";
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedData = data.slice(start, end);
+
+            paginatedData.forEach(donation => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td data-label="Donor">${donation.donor}</td>
+                    <td data-label="Donation Type">${donation.type}</td>
+                    <td data-label="Quantity">${donation.quantity}</td>
+                    <td data-label="Date">${donation.date}</td>
+                    <td data-label="Status">
+                        <select class="status-dropdown">
+                            <option value="Pending" ${donation.status === "Pending" ? "selected" : ""}>Pending</option>
+                            <option value="Received" ${donation.status === "Received" ? "selected" : ""}>Received</option>
+                            <option value="Distributed" ${donation.status === "Distributed" ? "selected" : ""}>Distributed</option>
+                        </select>
+                    </td>
+                    <td data-label="Action"><button onclick="viewDetails('${donation.donor}')">View Details</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            updatePaginationButtons(data.length);
+        }
+
+        function updatePaginationButtons(totalItems) {
+            const prevButton = document.getElementById("prev-page");
+            const nextButton = document.getElementById("next-page");
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === Math.ceil(totalItems / itemsPerPage);
+        }
+
+        function viewDetails(donor) {
+            alert(`Viewing details for donation by ${donor}`);
+            // Implement view details functionality
+        }
+
+        document.getElementById("search-input").addEventListener("input", function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredData = donationsData.filter(donation => 
+                Object.values(donation).some(value => 
+                    value.toString().toLowerCase().includes(searchTerm)
+                )
+            );
+            currentPage = 1;
+            renderTable(filteredData);
+        });
+
+        document.getElementById("prev-page").addEventListener("click", function() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable(donationsData);
+            }
+        });
+
+        document.getElementById("next-page").addEventListener("click", function() {
+            if (currentPage < Math.ceil(donationsData.length / itemsPerPage)) {
+                currentPage++;
+                renderTable(donationsData);
+            }
+        });
+
+        // Image upload preview
+        document.getElementById('image-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = document.createElement('img');
+                img.src = event.target.result;
+                const preview = document.getElementById('image-preview');
+                preview.innerHTML = '';
+                preview.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        });
+
+        // Calculate and display stats
+        function updateStats() {
+            let totalMoney = 0;
+            let totalFood = 0;
+            let totalClothing = 0;
+            const activeDonors = new Set();
+
+            donationsData.forEach(donation => {
+                activeDonors.add(donation.donor);
+                
+                if (donation.type === 'Cash') {
+                    totalMoney += parseFloat(donation.quantity.replace(/[^0-9.-]+/g,""));
+                } else if (donation.type === 'Food') {
+                    totalFood += parseInt(donation.quantity);
+                } else if (donation.type === 'Clothing') {
+                    totalClothing += parseInt(donation.quantity);
+                }
+            });
+
+            document.getElementById('total-money').textContent = totalMoney.toFixed(2);
+            document.getElementById('total-food').textContent = totalFood;
+            document.getElementById('total-clothing').textContent = totalClothing;
+            document.getElementById('active-donors').textContent = activeDonors.size;
+        }
+
+        // Initial render and stats update
+        renderTable(donationsData);
+        updateStats();
+    </script>
+</body>
+</html>

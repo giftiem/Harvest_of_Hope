@@ -1,0 +1,25 @@
+<!-- templates/view_charity.html -->
+{% extends "base.html" %}
+{% block title %}{{ charity.name }}{% endblock %}
+{% block content %}
+<h1>{{ charity.name }}</h1>
+<img src="{{ charity.logo }}" alt="{{ charity.name }} Logo" class="charity-logo">
+<p>{{ charity.description }}</p>
+<h2>Current Needs</h2>
+<ul>
+    {% for need in charity.needs %}
+    <li>{{ need }}</li>
+    {% endfor %}
+</ul>
+<h2>Impact Stories</h2>
+<div class="stories-grid">
+    {% for story in charity.stories %}
+    <div class="story-card">
+        <h3>{{ story.title }}</h3>
+        <p>{{ story.content[:100] }}...</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+    {% endfor %}
+</div>
+<a href="{{ url_for('make_donation') }}" class="btn">Make a Donation</a>
+{% endblock %}

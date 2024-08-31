@@ -1,0 +1,38 @@
+<!-- templates/user_dashboard.html -->
+{% extends "base.html" %}
+{% block title %}User Dashboard{% endblock %}
+{% block content %}
+<h1>Your Dashboard</h1>
+<div class="dashboard-stats">
+    <div class="stat-card">
+        <h3>Total Donations</h3>
+        <p class="stat">25</p>
+    </div>
+    <div class="stat-card">
+        <h3>Impact Score</h3>
+        <p class="stat">75</p>
+    </div>
+    <div class="stat-card">
+        <h3>Badges Earned</h3>
+        <p class="stat">5</p>
+    </div>
+</div>
+<h2>Your Donation History</h2>
+<table id="donation-history">
+    <thead>
+        <tr>
+            <th>Charity</th>
+            <th>Donation Type</th>
+            <th>Quantity</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Donation history rows will be dynamically added here -->
+    </tbody>
+</table>
+<h2>Your Badges</h2>
+<div class="badges-grid">
+    <!-- Badge icons will be dynamically added here -->
+</div>
+{% endblock %}

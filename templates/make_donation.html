@@ -1,0 +1,32 @@
+<!-- templates/make_donation.html -->
+{% extends "base.html" %}
+{% block title %}Make a Donation{% endblock %}
+{% block content %}
+<h1>Make a Donation</h1>
+<form id="donation-form">
+    <label for="charity">Select Charity:</label>
+    <select id="charity" name="charity" required>
+        {% for charity in charities %}
+        <option value="{{ charity.id }}">{{ charity.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="donation-type">Donation Type:</label>
+    <select id="donation-type" name="donation-type" required>
+        <option value="food">Food</option>
+        <option value="clothes">Clothes</option>
+        <option value="books">Books</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <label for="delivery-method">Delivery Method:</label>
+    <select id="delivery-method" name="delivery-method" required>
+        <option value="drop-off">Drop-off</option>
+        <option value="pickup">Pickup</option>
+    </select>
+
+    <button type="submit" class="btn">Make Donation</button>
+</form>
+{% endblock %}

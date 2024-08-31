@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Donatee Profile</title>
+    <!-- Given style references -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap-5.3.0.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/remixicon.css">
+    <link rel="stylesheet" type="text/css" href="/static/plugin.css">
+    <link rel="stylesheet" type="text/css" href="/static/main-style.css">
+    <style>
+        body {
+            background-color: white; /* Setting background color to white */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Top section with search and dropdowns -->
+        <div class="row align-items-center py-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Search...">
+            </div>
+            <div class="col-md-6 text-end">
+                <div class="dropdown d-inline">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dashboardDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dashboard
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <button class="btn" type="button">
+                    <i class="ri-notification-3-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Profile Section -->
+        <div class="row align-items-center py-3">
+            <div class="col-md-6 d-flex align-items-center">
+                <img src="/static/images/profile/default-profile.png" alt="Profile Image" class="rounded-circle" style="width: 100px; height: 100px;">
+                <div class="ms-3">
+                    <h4>John Doe <small class="text-muted">Donatee</small></h4>
+                    <div>
+                        <i class="ri-instagram-line"></i>
+                        <i class="ri-facebook-box-line"></i>
+                        <i class="ri-twitter-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Video about organization -->
+                <div style="width: 100%; padding-top: 56.25%; position: relative;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Donors Display -->
+        <h5>People who have donated to you</h5>
+        <div class="d-flex justify-content-start">
+            <!-- Repeat this block for each donor -->
+            <div class="p-2">
+                <img src="/static/images/profile/donor1.png" alt="Donor Profile" class="rounded-circle" style="width: 60px; height: 60px;">
+                <p>Donor Name</p>
+            </div>
+            <div class="p-2">
+                <img src="/static/images/profile/donor2.png" alt="Donor Profile" class="rounded-circle" style="width: 60px; height: 60px;">
+                <p>Donor Name</p>
+            </div>
+            <div class="p-2">
+                <img src="/static/images/profile/donor3.png" alt="Donor Profile" class="rounded-circle" style="width: 60px; height: 60px;">
+                <p>Donor Name</p>
+            </div>
+        </div>
+        <p><a href="#">See all</a></p>
+
+        <hr>
+
+        <!-- Post Achievements Section -->
+        <h5>Post your achievement</h5>
+        <div class="row">
+            <!-- Repeat this block for each post -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <video width="100%" controls>
+                        <source src="movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <p>Video description and views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <video width="100%" controls>
+                        <source src="movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <p>Video description and views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-wrapper footer-bg-one">
+            <div class="container">
+                <div class="footer-menu">
+                    <div class="col-lg-12">
+                        <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                            <div class="header-left d-flex align-items-center justify-content-between">
+                        
+                            </div>
+                            <!-- Footer-menu -->
+                            <!-- <div class="main-menu d-none d-lg-block">
+                                <nav>
+                                    <ul class="listing" id="navigation2">
+                                        <li class="single-list"><a href="index.html" class="single">Home</a></li>
+                                        <li class="single-list"><a href="donation.html" class="single">Donation</a></li>
+                                        <li class="single-list"><a href="about.html" class="single">About</a></li>
+                                        <li class="single-list"><a href="blog.html" class="single">Blog</a></li>
+                                        <li class="single-list"><a href="contact-us.html" class="single">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div> -->
+                            <!-- Right button -->
+                            <!-- <ul class="cart">
+                                <li class="cart-list"><a href="donate-payment.html" class="donate-btn">Donate</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-line">
+                <div class="footer-imp-link row g-4 justify-content-between">
+                    <div class="col-xl-2 col-lg-6">
+                        <div class="footer-link">
+                            <h4 class="title">Explore Links</h4>
+                            <ul class="imp-link">
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">About Company</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Latest Projects</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Latest Blog</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Our Testimonials</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Our Mission</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6">
+                        <div class="footer-link">
+                            <h4 class="title">Get Support</h4>
+                            <ul class="imp-link">
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">About</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">How it Works</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Knowledge Hub</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Success Stories</a>
+                                </li>
+                                <li class="single-list">
+                                    <a class="single" href="javascript:void(0)">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-5">
+                        <div class="footer-link">
+                            <h4 class="title">Get Support</h4>
+                            <ul class="imp-link">
+                                <li class="single-list">
+                                    <div class="d-flex align-items-center gap-10 mb-20">
+                                        <div class="imp-icon">
+                                            <i class="ri-mail-fill"></i>
+                                        </div>
+                                        <a class="single" href="javascript:void(0)">HarvestHope@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li class="single-list">
+                                    <div class="d-flex align-items-center gap-10 mb-20">
+                                        <div class="imp-icon">
+                                            <i class="ri-phone-fill"></i>
+                                        </div>
+                                        <a class="single" href="javascript:void(0)">(+27) 00 000 0000</a>
+                                    </div>
+                                </li>
+                                <li class="single-list">
+                                    <div class="d-flex align-items-center gap-10 mb-20">
+                                        <div class="imp-icon">
+                                            <i class="ri-map-pin-2-fill"></i>
+                                        </div>
+                                        <a class="single" href="javascript:void(0)">Gauteng , Johannesburg</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="footer-link">
+                            <h4 class="title">Projects</h4>
+                            <ul class="imp-link">
+                                <li class="single-list">
+                                    <div class="d-flex gap-20 mb-20 align-items-center">
+                                        <div class="project-img">
+                                            <a href="donation-details.html">
+                          <img src="/static/images/gallery/project-1.png" alt="image">
+                        </a>
+                                        </div>
+
+                                        <div class="project-info">
+                                            <p class="project-date">12.Oct.2023</p>
+                                            <h4 class="project-title"><a href="donation-details.html">18 Best Charity Marketing Champions</a></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="single-list">
+                                    <div class="d-flex gap-20">
+                                        <div class="project-img">
+                                            <a href="donation-details.html">
+                          <img src="/static/images/gallery/project-2.png" alt="image">
+                        </a>
+                                        </div>
+                                        <div class="project-info">
+                                            <p class="project-date">20.Oct.2023</p>
+                                            <h4 class="project-title"><a href="donation-details.html">Charity starts from home.</a></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-line">
+            </div>
+            <!-- footer-bottom area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-copy-right text-center">
+                                    <p class="pera">Copyright © 2023 Harvest for hope. All rights reserved.</p>
+                                    <!-- <div class="footer-social-link">
+                                        <ul class="listing" style="padding: 0; list-style: none; text-align: center;">
+                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
+                                                <a class="single" href="">
+                                                    <img src="assets/images/icon/fb.png" alt="Facebook" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                                                </a>
+                                            </li>
+                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
+                                                <a class="single" href="">
+                                                    <img src="assets/images/icon/x.png" alt="twitter" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                                                </a>
+                                            </li>
+                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
+                                                <a class="single" href="">
+                                                    <img src="assets/images/icon/insta.png" alt="Instagram" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                                                </a>
+                                            </li>
+                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
+                                                <a class="single" href="">
+                                                    <img src="assets/images/icon/in.png" alt="LinkedIn" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="/static/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

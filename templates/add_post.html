@@ -1,0 +1,15 @@
+<!-- templates/add_post.html -->
+{% extends "base.html" %}
+{% block title %}Add Post{% endblock %}
+{% block content %}
+<h1>Add New Post</h1>
+<form action="{{ url_for('add_post') }}" method="post">
+    <label for="text">Post Text:</label>
+    <textarea id="text" name="text" required></textarea>
+
+    <label for="image">Image URL (optional):</label>
+    <input type="url" id="image" name="image">
+
+    <button type="submit" class="btn">Add Post</button>
+</form>
+{% endblock %}

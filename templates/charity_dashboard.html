@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dashboard-stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card h3 {
+            color: #34495e;
+            margin-top: 0;
+        }
+        .stat {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .dashboard-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #27ae60;
+        }
+        .progress-bar {
+            background-color: #ecf0f1;
+            border-radius: 13px;
+            padding: 3px;
+            margin-top: 10px;
+        }
+        .progress {
+            background-color: #3498db;
+            width: 0;
+            height: 10px;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            .stat-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Charity Dashboard</h1>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Donations</h3>
+                <p class="stat" id="total-donations">$0</p>
+                <div class="progress-bar">
+                    <div class="progress" id="donations-progress"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <h3>Active Donors</h3>
+                <p class="stat" id="active-donors">0</p>
+                <div class="progress-bar">
+                    <div class="progress" id="donors-progress"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <h3>Impact Score</h3>
+                <p class="stat" id="impact-score">0</p>
+                <div class="progress-bar">
+                    <div class="progress" id="impact-progress"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-actions">
+            <button class="btn" onclick="location.href='#post-needs'">Post Needs</button>
+            <button class="btn" onclick="location.href='#share-story'">Share Story</button>
+            <button class="btn" onclick="location.href='#donation-management'">Manage Donations</button>
+        </div>
+    </div>
+
+    <script>
+        function animateValue(id, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                document.getElementById(id).innerText = id === 'total-donations' ? `$${value.toLocaleString()}` : value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function animateProgress(id, targetWidth) {
+            const progress = document.getElementById(id);
+            progress.style.width = `${targetWidth}%`;
+        }
+
+        window.onload = function() {
+            animateValue("total-donations", 0, 10000, 2000);
+            animateValue("active-donors", 0, 500, 2000);
+            animateValue("impact-score", 0, 85, 2000);
+
+            setTimeout(() => {
+                animateProgress("donations-progress", 75);
+                animateProgress("donors-progress", 60);
+                animateProgress("impact-progress", 85);
+            }, 500);
+        };
+    </script>
+</body>
+</html>

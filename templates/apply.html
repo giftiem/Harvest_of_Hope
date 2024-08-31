@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Program Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #001f3f; /* Navy blue */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #001f3f; /* Navy blue */
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #001f3f; /* Navy blue */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue */
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eaeaea;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Donation Program Application</h1>
+</header>
+
+<div class="container">
+    <h2>Apply to Join Our Donation Program</h2>
+    <p>Please fill out the form below to apply for our donation program. We welcome small organizations and charities that align with our mission.</p>
+
+    <div class="image-container">
+        <div class="image-placeholder">
+            <img src="/static/images/logo/image6.png" alt="Logo" style="width: 300px; height: auto;">
+        </div>
+        <div class="image-placeholder">
+            <img src="/static/images/gallery/apply_for_donation.jpg" alt="Logo" style="width: 300px; height: auto;">
+        </div>
+    </div>
+    
+    <form action="/submit-application" method="post" enctype="multipart/form-data">
+        <label for="orgName">Organization Name:</label>
+        <input type="text" id="orgName" name="orgName" required>
+
+        <label for="missionStatement">Mission Statement:</label>
+        <textarea id="missionStatement" name="missionStatement" rows="4" required></textarea>
+
+        <label for="contactEmail">Contact Email:</label>
+        <input type="email" id="contactEmail" name="contactEmail" required>
+
+        <label for="certificates">Upload Certificates:</label>
+        <input type="file" id="certificates" name="certificates" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <input type="submit" value="Submit Application">
+    </form>
+</div>
+
+</body>
+</html>
