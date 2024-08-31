@@ -1,32 +1,110 @@
-<!-- templates/make_donation.html -->
-{% extends "base.html" %}
-{% block title %}Make a Donation{% endblock %}
-{% block content %}
-<h1>Make a Donation</h1>
-<form id="donation-form">
-    <label for="charity">Select Charity:</label>
-    <select id="charity" name="charity" required>
-        {% for charity in charities %}
-        <option value="{{ charity.id }}">{{ charity.name }}</option>
-        {% endfor %}
-    </select>
-
-    <label for="donation-type">Donation Type:</label>
-    <select id="donation-type" name="donation-type" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Page</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { width: 90%; max-width: 600px; margin: auto; padding: 20px; }
+  .form-group { margin-bottom: 15px; }
+  label { display: block; margin-bottom: 5px; }
+  input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; }
+  .hidden { display: none; }
+  #addressInfo, #courierInfo { margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Donation Form</h1>
+  <form id="donationForm">
+    <div class="form-group">
+      <label for="category">I want to donate:</label>
+      <select id="category" name="category">
+        <option value="">Select Category</option>
         <option value="food">Food</option>
         <option value="clothes">Clothes</option>
-        <option value="books">Books</option>
-    </select>
+        <option value="other">Other</option>
+      </select>
+    </div>
 
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity" required>
+    <!-- Food Donation Fields -->
+    <div id="foodFields" class="hidden">
+      <div class="form-group">
+        <label for="foodType">Type of Food:</label>
+        <input type="text" id="foodType" name="foodType">
+      </div>
+      <div class="form-group">
+        <label for="foodQuantity">Quantity:</label>
+        <input type="number" id="foodQuantity" name="foodQuantity">
+      </div>
+    </div>
 
-    <label for="delivery-method">Delivery Method:</label>
-    <select id="delivery-method" name="delivery-method" required>
-        <option value="drop-off">Drop-off</option>
-        <option value="pickup">Pickup</option>
-    </select>
+    <!-- Clothes Donation Fields -->
+    <div id="clothesFields" class="hidden">
+      <div class="form-group">
+        <label for="clothesItem">Item Description:</label>
+        <input type="text" id="clothesItem" name="clothesItem">
+      </div>
+      <div class="form-group">
+        <label for="clothesImage">Upload Image:</label>
+        <input type="file" id="clothesImage" name="clothesImage">
+      </div>
+      <div class="form-group">
+        <label for="clothesQuantity">Quantity:</label>
+        <input type="number" id="clothesQuantity" name="clothesQuantity">
+      </div>
+    </div>
 
-    <button type="submit" class="btn">Make Donation</button>
-</form>
-{% endblock %}
+    <!-- Other Donation Fields -->
+    <div id="otherFields" class="hidden">
+      <div class="form-group">
+        <label for="otherDescription">Description:</label>
+        <textarea id="otherDescription" name="otherDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="otherVerify">Needs Verification:</label>
+        <input type="checkbox" id="otherVerify" name="otherVerify">
+      </div>
+    </div>
+
+    <!-- Delivery Method -->
+    <div class="form-group">
+      <label for="deliveryMethod">Delivery Method:</label>
+      <select id="deliveryMethod" name="deliveryMethod">
+        <option value="dropOff">Drop Off</option>
+        <option value="pickUp">Pick Up</option>
+      </select>
+    </div>
+
+    <!-- Address Info -->
+    <div id="addressInfo" class="hidden">
+      <p><strong>Drop off at:</strong> 123 Charity Lane, Helpville, HV 12345</p>
+    </div>
+
+    <!-- Courier Info -->
+    <div id="courierInfo" class="hidden">
+      <p><strong>Contact our partnered courier:</strong> The Courier Guy</p>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Choose Charity</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('category').addEventListener('change', function() {
+    document.getElementById('foodFields').style.display = this.value === 'food' ? 'block' : 'none';
+    document.getElementById('clothesFields').style.display = this.value === 'clothes' ? 'block' : 'none';
+    document.getElementById('otherFields').style.display = this.value === 'other' ? 'block' : 'none';
+  });
+
+  document.getElementById('deliveryMethod').addEventListener('change', function() {
+    document.getElementById('addressInfo').style.display = this.value === 'dropOff' ? 'block' : 'none';
+    document.getElementById('courierInfo').style.display = this.value === 'pickUp' ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>
