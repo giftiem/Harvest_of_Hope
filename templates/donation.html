@@ -99,15 +99,17 @@
 
     <div class="container mt-5">
         <div class="container mt-5 text-center">
-            <h3>Choose an item to donate</h3>
+            <h3>Items you can donate</h3>
         </div>
         <div class="d-flex justify-content-center gap-3 flex-wrap mt-5 mb-3">
-            <a href="{{ url_for('donation process') }}" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Clothes</a>
-            <a href="{{ url_for('donation process') }}" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Funds</a>
-            <a href="{{ url_for('donation process') }}" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Food</a>
-            <a href="{{ url_for('donation process') }}" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Education</a>
+            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Clothes</a>
+            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Funds</a>
+            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Food</a>
+            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Education</a>
         </div>
-
+        <div class="d-flex gap-20 flex-wrap justify-content-center">
+            <a href="make_donation.html" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Make Donation</a>
+        </div>
         <!-- Button to trigger the dropdown -->
         <button class="btn btn-tertiary-fill" type="button" data-bs-toggle="collapse" data-bs-target="#donationTable" aria-expanded="false" aria-controls="donationTable">
             Your Donations
