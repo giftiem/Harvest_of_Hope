@@ -1,91 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donation Page</title>
-<style>
-  body { font-family: Arial, sans-serif; }
-  .container { width: 90%; max-width: 600px; margin: auto; padding: 20px; }
-  .form-group { margin-bottom: 15px; }
-  label { display: block; margin-bottom: 5px; }
-  input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; }
-  .hidden { display: none; }
-  #addressInfo, #courierInfo { margin-top: 20px; }
-</style>
+    <title>HarvestHope HTML Template</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap-5.3.0.min.css">
+    <!-- fonts & icon -->
+    <link rel="stylesheet" type="text/css" href="/static/remixicon.css">
+    <!-- Plugin -->
+    <link rel="stylesheet" type="text/css" href="/static/plugin.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/main-style.css">
+    <!-- RTL CSS::When Need RTL Uncomments File -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/rtl.css"> -->
 </head>
 <body>
-<div class="container">
-  <h1>Donation Form</h1>
-  <form id="donationForm">
-    <div class="form-group">
-      <label for="category">I want to donate:</label>
-      <select id="category" name="category">
-        <option value="">Select Category</option>
-        <option value="food">Food</option>
-        <option value="clothes">Clothes</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
+<div class="donation-container">
+    <header>
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                                <div class="header-left d-flex align-items-center justify-content-between">
+                                    <!-- Logo-->
+                                    <div class="logo logo-large light-logo">
+                                        <a href="index.html">
+                                            <img src="/static/images/logo/image6.png" alt="logo" style="width: 100px; height: auto;">
+                                            <img src="/static/images/logo/name.png" alt="logo name" style="width: 150px; height: auto; margin-top: -20px;">
+                                        </a>
+                                    </div>
+                                    <!-- Logo Mobile-->
+                                    <div class="logo logo-mobile light-logo">
+                                        <a href="index.html"><img src="/static/images/logo/image6.png" alt="img"></a>
+                                    </div>
+                                </div>
 
-    <!-- Food Donation Fields -->
-    <div id="foodFields" class="hidden">
-      <div class="form-group">
-        <label for="foodType">Type of Food:</label>
-        <input type="text" id="foodType" name="foodType">
-      </div>
-      <div class="form-group">
-        <label for="foodQuantity">Quantity:</label>
-        <input type="number" id="foodQuantity" name="foodQuantity">
-      </div>
-    </div>
+                                <div class="search-container">
+                                    <input type="text" id="searchField" class="search-field" placeholder="Search...">
+                                    <button id="closeSearch" class="close-search-btn"><i class="ri-close-line"></i></button>
+                                </div>
 
-    <!-- Clothes Donation Fields -->
-    <div id="clothesFields" class="hidden">
-      <div class="form-group">
-        <label for="clothesItem">Item Description:</label>
-        <input type="text" id="clothesItem" name="clothesItem">
-      </div>
-      <div class="form-group">
-        <label for="clothesImage">Upload Image:</label>
-        <input type="file" id="clothesImage" name="clothesImage">
-      </div>
-      <div class="form-group">
-        <label for="clothesQuantity">Quantity:</label>
-        <input type="number" id="clothesQuantity" name="clothesQuantity">
-      </div>
-    </div>
+                                <!-- Main-menu for desktop -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul class="listing" id="navigation">
+                                            <li class="single-list"><a href="about.html" class="single">Home</a></li>
+                                            <li class="single-list"><a href="about.html" class="single">About</a></li>
+                                            <li class="single-list"><a href="donation.html" class="single">Donation</a></li>
+                                            <li class="single-list"><a href="blog.html" class="single">Blog</a></li>
+                                            <li class="single-list">
+                                                <a href="javascript:void(0)" class="single active">Pages <i class="ri-arrow-down-s-line"></i></a>
+                                                <ul class="submenu">
+                                                    <li class="single-list"><a href="volunteer.html" class="single">Volunteer</a></li>
+                                                    <li class="single-list"><a href="donate-payment.html" class="single">donate pay</a></li>
+                                                    <li class="single-list"><a href="blog-details.html" class="single">Blog Details</a></li>
+                                                    <li class="single-list"><a href="event-details.html" class="single">event Details</a></li>
+                                                    <li class="single-list"><a href="donation-details.html" class="single">donation Details</a></li>
+                                                    <li class="single-list"><a href="volunteer-details.html" class="single">Volunteer Details</a></li>
+                                                    <li class="single-list">
+                                                        <a href="{{ url_for('profile') }}" class="single">Login<i class="ri-arrow-right-s-line"></i></a>
+                                                        <ul class="submenu">
+                                                            <li class="single-list"><a href="{{ url_for('profile') }}" class="single">Login</a></li>
+                                                            <li class="single-list"><a href="register.html" class="single">Registration</a></li>
+                                                            <li class="single-list"><a href="forgot-pass.html" class="single">Forgot Password</a></li>
+                                                            <li class="single-list"><a href="verification.html" class="single">Verification</a></li>
+                                                            <li class="single-list"><a href="new-password.html" class="single">New Password</a></li>
+                                                        </ul>
+                                                    </li>
 
-    <!-- Other Donation Fields -->
-    <div id="otherFields" class="hidden">
-      <div class="form-group">
-        <label for="otherDescription">Description:</label>
-        <textarea id="otherDescription" name="otherDescription"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="otherVerify">Needs Verification:</label>
-        <input type="checkbox" id="otherVerify" name="otherVerify">
-      </div>
-    </div>
+                                                    <li class="single-list"><a href="faq.html" class="single">FAQs</a></li>
+                                                    <li class="single-list"><a href="privacy-policy.html" class="single">privacy policy</a></li>
+                                                    <li class="single-list"><a href="terms-condition.html" class="single">terms-condition</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="single-list"><a href="contact-us.html" class="single">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
 
-    <!-- Delivery Method -->
-    <div class="form-group">
-      <label for="deliveryMethod">Delivery Method:</label>
-      <select id="deliveryMethod" name="deliveryMethod">
-        <option value="dropOff">Drop Off</option>
-        <option value="pickUp">Pick Up</option>
-      </select>
-    </div>
+                                <div class="header-right">
+                                    <div class="cart">
+                                        <!-- search button -->
+                                        <a href="javascript:void(0)" class="rounded-btn search-bar"><i class="ri-search-line"></i></a>
+                                        <a href="{{ url_for('profile') }}" class="btn-primary-fill pill-btn">Log in</a>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Breadcrumb Area Start -->
+        <section class="breadcrumb-section breadcrumb-bg">
+            <div class="container">
+                <div class="breadcrumb-text">
+                    <h1 class="title wow fadeInUp" data-wow-delay="0.1s">Make Donation</h1>
+                </div>
+            </div>
+        </section>
+        <!-- End-of Breadcrumb Area -->
 
-    <!-- Address Info -->
-    <div id="addressInfo" class="hidden">
-      <p><strong>Drop off at:</strong> 123 Charity Lane, Helpville, HV 12345</p>
-    </div>
+        <div class="container mt-5">
+            <h1 class="text-center text-primary">Make a Donation</h1>
+            <form id="donation-form" class="donation-form">
+                <div class="form-group mb-3">
+                    <label for="charity" class="form-label">Select Charity:</label>
+                    <select id="charity" name="charity" class="form-select" required>
+                        {% for charity in charities %}
+                        <option value="{{ charity.id }}">{{ charity.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
 
-    <!-- Courier Info -->
-    <div id="courierInfo" class="hidden">
-      <p><strong>Contact our partnered courier:</strong> The Courier Guy</p>
-    </div>
+                <div class="form-group mb-3">
+                    <label for="donation-type" class="form-label">Donation Type:</label>
+                    <select id="donation-type" name="donation-type" class="form-select" required>
+                        <option value="food">Food</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="books">Books</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="quantity" class="form-label">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" class="form-control" required>
+                </div>
 
     <form id="myForm">
       <button type="submit">Submit Application</button>
@@ -108,3 +150,42 @@
 
 </body>
 </html>
+
+<style>
+/* CSS embedded within the HTML file */
+
+/* Container and Layout Styles */
+.donation-container {
+    padding: 0;
+}
+
+/* Form Styles */
+.donation-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    color: #031633;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    border-radius: 5px;
+    border: 1px solid #031633;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #031633;
+    border-color: #031633;
+}
+
+.btn-primary:hover {
+    background-color: #021124;
+    border-color: #021124;
+}
+</style>
