@@ -37,9 +37,11 @@
     </div>
 
     <div class="flex justify-between mt-4">
-      <a href="{{ url_for('view_charity', charity_id=charity.id) }}" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
-        View Details
-      </a>
+     <a href="{{ url_for('charity_dashboard', charity_id=charity.id) }}" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
+    View Charity Dashboard
+</a>
+
+
       <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=216+14th+Ave+Roodepoort+2195&destination={{ charity.location }}&travelmode=driving" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
         Get Directions
       </a>
