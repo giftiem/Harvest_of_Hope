@@ -1,0 +1,101 @@
+/* Footer global */
+.adminuiux-footer {
+    color: var(--bs-link-color);
+    background-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: ease-in-out 0.2s padding;
+    z-index: 0;
+
+    a {
+        color: var(--adminuiux-theme-1);
+
+        &:hover,
+        &:focus {
+            color: var(--adminuiux-theme-1-hover);
+        }
+
+        &:active,
+        &.active {
+            color: var(--adminuiux-theme-1-active);
+        }
+    }
+
+    .nav,
+    .nav.small {
+        .nav-item {
+            .nav-link {
+                --bs-nav-link-color: var(--adminuiux-footer-link-text);
+                --bs-nav-link-hover-color: var(--adminuiux-footer-link-hover-text);
+                --bs-nav-link-active-color: var(--adminuiux-footer-link-active-text);
+                --bs-nav-link-padding-y: 0.15rem;
+
+                &:active,
+                &.active {
+                    color: var(--adminuiux-footer-link-active-text);
+                }
+            }
+        }
+    }
+
+    &.has-adminuiux-sidebar {
+        padding-left: var(--adminuiux-sidebar-width);
+    }
+}
+
+/* footer global when iconic sidebar */
+.iconic-sidebar {
+    .adminuiux-footer {
+        &.has-adminuiux-sidebar {
+            padding-left: var(--adminuiux-sidebar-iconic-width);
+        }
+    }
+}
+
+/* Footer rtl */
+[dir=rtl] {
+    .adminuiux-footer {
+        &.has-adminuiux-sidebar {
+            padding-left: 0;
+            padding-right: var(--adminuiux-sidebar-width);
+        }
+    }
+
+    .adminuiux-sidebar-iconic {
+        .adminuiux-footer {
+            &.has-adminuiux-sidebar {
+                padding-left: 0;
+                padding-right: var(--adminuiux-sidebar-iconic-width);
+            }
+        }
+    }
+
+    .sidebar-close {
+        .adminuiux-footer {
+            &.has-adminuiux-sidebar {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+
+/* Footer media query 991 -lg */
+@media screen and (max-width: 991px) {
+    .adminuiux-footer {
+        &.has-adminuiux-sidebar {
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    [dir=rtl] {
+
+        .adminuiux-footer {
+            &.has-adminuiux-sidebar {
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
