@@ -59,9 +59,9 @@
                                                     <li class="single-list"><a href="donation-details.html" class="single">donation Details</a></li>
                                                     <li class="single-list"><a href="volunteer-details.html" class="single">Volunteer Details</a></li>
                                                     <li class="single-list">
-                                                        <a href="{{ url_for('profile') }}" class="single">Login<i class="ri-arrow-right-s-line"></i></a>
+                                                        <a href="{{ url_for('user_profile') }}" class="single">Login<i class="ri-arrow-right-s-line"></i></a>
                                                         <ul class="submenu">
-                                                            <li class="single-list"><a href="{{ url_for('profile') }}" class="single">Login</a></li>
+                                                            <li class="single-list"><a href="{{ url_for('user_profile') }}" class="single">Login</a></li>
                                                             <li class="single-list"><a href="register.html" class="single">Registration</a></li>
                                                             <li class="single-list"><a href="forgot-pass.html" class="single">Forgot Password</a></li>
                                                             <li class="single-list"><a href="verification.html" class="single">Verification</a></li>
@@ -76,7 +76,7 @@
                                     <div class="cart">
                                         <!-- search button -->
                                         <a href="javascript:void(0)" class="rounded-btn search-bar"><i class="ri-search-line"></i></a>
-                                        <a href="{{ url_for('profile') }}" class="btn-primary-fill pill-btn">Log in</a>
+                                        <a href="{{ url_for('user_profile') }}" class="btn-primary-fill pill-btn">Log in</a>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
 
-                                <a href="{{ url_for('profile') }}" class="btn-primary-fill justify-content-center">
+                                <a href="{{ url_for('user_profile') }}" class="btn-primary-fill justify-content-center">
                     <span class="d-flex justify-content-center gap-6">
                       <span>Login</span>
                     </span>
@@ -142,7 +142,7 @@
                       </a>
                                     </p>
                                 </div>
-                                <a href="{{ url_for('profile') }}" class="login-btn d-flex align-items-center justify-content-center gap-10">
+                                <a href="{{ url_for('user_profile') }}" class="login-btn d-flex align-items-center justify-content-center gap-10">
                     <img src="/static/images/icon/google-icon.png" alt="img" class="m-0">
                     <span> login with Google</span>
                   </a>
