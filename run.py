@@ -29,6 +29,10 @@ def share_story():
 def donation_management():
     return render_template('donation_management.html')
 
+@app.route('/investment_dashboard')
+def investment_dashboard():
+    return render_template('investment_dashboard.html')
+
 @app.route('/explore_charities', methods=['GET', 'POST'])
 def explore_charities():
     with open('charities.json', 'r') as f:
