@@ -1,345 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends "layout.html" %}
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap-5.3.0.min.css">
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" type="text/css" href="/static/remixicon.css">
-    <!-- Plugin -->
-    <link rel="stylesheet" type="text/css" href="/static/plugin.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/main-style.css">
-</head>
-<body>
-          <div class="header-area">
-            <div class="main-header header-sticky">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                                <div class="header-left d-flex align-items-center justify-content-between">
-                                    <!-- Logo-->
-                                    <div class="logo logo-large light-logo">
-                                        <a href="index.html">
-                                            <img src="/static/images/logo/image6.png" alt="logo" style="width: 100px; height: auto;">
-                                            <img src="/static/images/logo/name.png" alt="logo name" style="width: 150px; height: auto; margin-top: -20px;">
-                                        </a>
-                                    </div>
-                                    
-                                </div>
+{% block title %}Donate{% endblock %}
 
-                                <div class="search-container">
-                                    <input type="text" id="searchField" class="search-field" placeholder="Search...">
-                                    <button id="closeSearch" class="close-search-btn"><i class="ri-close-line"></i></button>
-                                </div>
+{% block content %}
 
-                                <!-- Main-menu for desktop -->
-                                <div class="main-menu d-none d-lg-block">
-                                    <nav>
-                                        <ul class="listing" id="navigation">
-                                            <li class="single-list"><a href="about.html" class="single">Home</a></li>
-                                            <li class="single-list"><a href="{{ url_for('about') }}" class="single">About</a></li>
-                                            <li class="single-list"><a href="donation.html" class="single">Donation</a></li>
-                                            <li class="single-list"><a href="blog.html" class="single">Blog</a></li>
-                                            <li class="single-list">
-                                                <a href="javascript:void(0)" class="single active">Pages <i class="ri-arrow-down-s-line"></i></a>
-                                                <ul class="submenu">
-                                                    <li class="single-list"><a href="volunteer.html" class="single">Volunteer</a></li>
-                                                    <li class="single-list"><a href="donate-payment.html" class="single">donate pay</a></li>
-                                                    <li class="single-list"><a href="blog-details.html" class="single">Blog Details</a></li>
-                                                    <li class="single-list"><a href="event-details.html" class="single">event Details</a></li>
-                                                    <li class="single-list"><a href="donation-details.html" class="single">donation Details</a></li>
-                                                    <li class="single-list"><a href="volunteer-details.html" class="single">Volunteer Details</a></li>
-                                                    <li class="single-list">
-                                                        <a href="javascript:void(0)" class="single">Login<i class="ri-arrow-right-s-line"></i></a>
-                                                        <ul class="submenu">
-                                                            <li class="single-list"><a href="{{ url_for('login') }}" class="single">Login</a></li>
-                                                            <li class="single-list"><a href="register.html" class="single">Registration</a></li>
-                                                            <li class="single-list"><a href="forgot-pass.html" class="single">Forgot Password</a></li>
-                                                            <li class="single-list"><a href="verification.html" class="single">Verification</a></li>
-                                                            <li class="single-list"><a href="new-password.html" class="single">New Password</a></li>
-                                                        </ul>  
 
-                                                    </li>
-                                                    <!-- Add the Sign Up button here -->
-                                                <li class="single-list"><a href="signup.html" class="single">Sign Up</a></li>
-                                                <li class="single-list"><a href="faq.html" class="single">FAQs</a></li>
-                                                <li class="single-list"><a href="privacy-policy.html" class="single">privacy policy</a></li>
-                                                <li class="single-list"><a href="terms-condition.html" class="single">terms-condition</a></li>
-                                            </ul>
 
-                                                    <li class="single-list"><a href="faq.html" class="single">FAQs</a></li>
-                                                    <li class="single-list"><a href="privacy-policy.html" class="single">privacy policy</a></li>
-                                                    <li class="single-list"><a href="terms-condition.html" class="single">terms-condition</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="single-list"><a href="contact-us.html" class="single">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+<div class="container mt-5">
+    <div class="container mt-5 text-center">
+        <h3>Items you can donate</h3>
+    </div>
+    <div class="d-flex justify-content-center gap-3 flex-wrap mt-5 mb-3">
+        <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Clothes</a>
+        <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Funds</a>
+        <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Food</a>
+        <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Education</a>
+    </div>
+    <div class="d-flex gap-20 flex-wrap justify-content-center">
+        <a href="make_donation.html" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Make Donation</a>
+    </div>
+    <!-- Button to trigger the dropdown -->
+    <button class="btn btn-tertiary-fill" type="button" data-bs-toggle="collapse" data-bs-target="#donationTable" aria-expanded="false" aria-controls="donationTable">
+        Your Donations
+    </button>
 
-                                <div class="header-right">
-                                    <div class="cart">
-                                        <!-- search button -->
-                                        <a href="javascript:void(0)" class="rounded-btn search-bar"><i class="ri-search-line"></i></a>
-                                        <a href= "home.html" class="btn-primary-fill pill-btn">Log out</a>
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <div class="container mt-5">
-        <div class="container mt-5 text-center">
-            <h3>Items you can donate</h3>
-        </div>
-        <div class="d-flex justify-content-center gap-3 flex-wrap mt-5 mb-3">
-            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Clothes</a>
-            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Funds</a>
-            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Food</a>
-            <a class="btn-tertiary-fill hero-btn wow fadeInLeft" >Education</a>
-        </div>
-        <div class="d-flex gap-20 flex-wrap justify-content-center">
-            <a href="make_donation.html" class="btn-primary-fill hero-btn wow fadeInLeft" data-wow-delay="0.4s">Make Donation</a>
-        </div>
-        <!-- Button to trigger the dropdown -->
-        <button class="btn btn-tertiary-fill" type="button" data-bs-toggle="collapse" data-bs-target="#donationTable" aria-expanded="false" aria-controls="donationTable">
-            Your Donations
-        </button>
-
-        <!-- Collapsible table -->
-        <div class="collapse mt-3" id="donationTable">
-            <div class="card card-body">
-                <table class="table table-bordered">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Donation Type</th>
-                            <th>Quantity</th>
-                            <th>Date of Donation</th>
-                            <th>Status</th>
-                            <th>Date of Completion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Clothes</td>
-                            <td>5 Bags</td>
-                            <td>August 15, 2024</td>
-                            <td><span class="badge bg-success">Completed</span></td>
-                            <td>August 20, 2024</td>
-                        </tr>
-                        <tr>
-                            <td>Food Supplies</td>
-                            <td>100 Units</td>
-                            <td>August 22, 2024</td>
-                            <td><span class="badge bg-warning text-dark">Pending</span></td>
-                            <td>--</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- Collapsible table -->
+    <div class="collapse mt-3" id="donationTable">
+        <div class="card card-body">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Donation Type</th>
+                        <th>Quantity</th>
+                        <th>Date of Donation</th>
+                        <th>Status</th>
+                        <th>Date of Completion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clothes</td>
+                        <td>5 Bags</td>
+                        <td>August 15, 2024</td>
+                        <td><span class="badge bg-success">Completed</span></td>
+                        <td>August 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Food Supplies</td>
+                        <td>100 Units</td>
+                        <td>August 22, 2024</td>
+                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                        <td>--</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 
-    <footer>
-        <div class="footer-wrapper footer-bg-one">
-            <div class="container">
-                <div class="footer-menu">
-                    <div class="col-lg-12">
-                        <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                            <div class="header-left d-flex align-items-center justify-content-between">
-                        
-                            </div>
-                            <!-- Footer-menu -->
-                            <!-- <div class="main-menu d-none d-lg-block">
-                                <nav>
-                                    <ul class="listing" id="navigation2">
-                                        <li class="single-list"><a href="index.html" class="single">Home</a></li>
-                                        <li class="single-list"><a href="donation.html" class="single">Donation</a></li>
-                                        <li class="single-list"><a href="about.html" class="single">About</a></li>
-                                        <li class="single-list"><a href="blog.html" class="single">Blog</a></li>
-                                        <li class="single-list"><a href="contact-us.html" class="single">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div> -->
-                            <!-- Right button -->
-                            <!-- <ul class="cart">
-                                <li class="cart-list"><a href="donate-payment.html" class="donate-btn">Donate</a></li>
-                            </ul> -->
-                        </div>
-                    </div>
-                </div>
-                <hr class="footer-line">
-                <div class="footer-imp-link row g-4 justify-content-between">
-                    <div class="col-xl-2 col-lg-6">
-                        <div class="footer-link">
-                            <h4 class="title">Explore Links</h4>
-                            <ul class="imp-link">
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">About Company</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Latest Projects</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Latest Blog</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Our Testimonials</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Our Mission</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-6">
-                        <div class="footer-link">
-                            <h4 class="title">Get Support</h4>
-                            <ul class="imp-link">
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">About</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">How it Works</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Knowledge Hub</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Success Stories</a>
-                                </li>
-                                <li class="single-list">
-                                    <a class="single" href="javascript:void(0)">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-5">
-                        <div class="footer-link">
-                            <h4 class="title">Get Support</h4>
-                            <ul class="imp-link">
-                                <li class="single-list">
-                                    <div class="d-flex align-items-center gap-10 mb-20">
-                                        <div class="imp-icon">
-                                            <i class="ri-mail-fill"></i>
-                                        </div>
-                                        <a class="single" href="javascript:void(0)">HarvestHope@gmail.com</a>
-                                    </div>
-                                </li>
-                                <li class="single-list">
-                                    <div class="d-flex align-items-center gap-10 mb-20">
-                                        <div class="imp-icon">
-                                            <i class="ri-phone-fill"></i>
-                                        </div>
-                                        <a class="single" href="javascript:void(0)">(+27) 00 000 0000</a>
-                                    </div>
-                                </li>
-                                <li class="single-list">
-                                    <div class="d-flex align-items-center gap-10 mb-20">
-                                        <div class="imp-icon">
-                                            <i class="ri-map-pin-2-fill"></i>
-                                        </div>
-                                        <a class="single" href="javascript:void(0)">Gauteng , Johannesburg</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="footer-link">
-                            <h4 class="title">Projects</h4>
-                            <ul class="imp-link">
-                                <li class="single-list">
-                                    <div class="d-flex gap-20 mb-20 align-items-center">
-                                        <div class="project-img">
-                                            <a href="donation-details.html">
-                          <img src="/static/images/gallery/project-1.png" alt="image">
-                        </a>
-                                        </div>
 
-                                        <div class="project-info">
-                                            <p class="project-date">12.Oct.2023</p>
-                                            <h4 class="project-title"><a href="donation-details.html">18 Best Charity Marketing Champions</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="single-list">
-                                    <div class="d-flex gap-20">
-                                        <div class="project-img">
-                                            <a href="donation-details.html">
-                          <img src="/static/images/gallery/project-2.png" alt="image">
-                        </a>
-                                        </div>
-                                        <div class="project-info">
-                                            <p class="project-date">20.Oct.2023</p>
-                                            <h4 class="project-title"><a href="donation-details.html">Charity starts from home.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr class="footer-line">
-            </div>
-            <!-- footer-bottom area -->
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="footer-border">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="footer-copy-right text-center">
-                                    <p class="pera">Copyright © 2023 Harvest for hope. All rights reserved.</p>
-                                    <!-- <div class="footer-social-link">
-                                        <ul class="listing" style="padding: 0; list-style: none; text-align: center;">
-                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
-                                                <a class="single" href="">
-                                                    <img src="assets/images/icon/fb.png" alt="Facebook" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
-                                                </a>
-                                            </li>
-                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
-                                                <a class="single" href="">
-                                                    <img src="assets/images/icon/x.png" alt="twitter" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
-                                                </a>
-                                            </li>
-                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
-                                                <a class="single" href="">
-                                                    <img src="assets/images/icon/insta.png" alt="Instagram" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
-                                                </a>
-                                            </li>
-                                            <li class="single-list" style="display: inline-block; margin: 0 5px;">
-                                                <a class="single" href="">
-                                                    <img src="assets/images/icon/in.png" alt="LinkedIn" class="social-icon" style="width: 24px; height: 24px; vertical-align: middle;">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+{% endblock %}
 
-    <!-- Scripts -->
-    <script src="/static/js/jquery-3.7.0.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap-5.3.0.min.js"></script>
-    <!-- Plugin -->
-    <script src="/static/js/plugin.js"></script>
-    <!-- Main JS -->
-    <script src="/static/js/main.js"></script>
-</body>
-</html>
+    

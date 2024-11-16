@@ -1,146 +1,65 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends "layout.html" %}
 
-<head>
-    <title>HarvestHope - Sign Up</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap-5.3.0.min.css">
-    <!-- fonts & icon -->
-    <link rel="stylesheet" type="text/css" href="/static/remixicon.css">
-    <!-- Plugin -->
-    <link rel="stylesheet" type="text/css" href="/static/plugin.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="/static/main-style.css">
-</head>
+{% block title %}
+Dontor Application
+{% endblock %}
 
-<body>
-    <header>
-        <div class="header-area">
-            <div class="main-header header-sticky">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                                <div class="header-left d-flex align-items-center justify-content-between">
-                                    <!-- Logo-->
-                                    <div class="logo logo-large light-logo">
-                                        <a href="index.html">
-                                            <img src="/static/images/logo/image6.png" alt="logo" style="width: 100px; height: auto;">
-                                            <img src="/static/images/logo/name.png" alt="logo name" style="width: 150px; height: auto; margin-top: -20px;">
-                                        </a>
-                                    </div>
-                                    <!-- Logo Mobile-->
-                                    <div class="logo logo-mobile light-logo">
-                                        <a href="index.html"><img src="/static/images/logo/image6.png" alt="img"></a>
-                                    </div>
-                                </div>
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-3">Apply to Join Our Donation Program</h2>
+    <p>Please fill out the form below to apply for our donation program. We welcome small organizations and charities that align with our mission.</p>
 
-                                <div class="header-right">
-                                    <div class="cart">
-                                        <a href="{{ url_for('login') }}" class="btn-primary-fill pill-btn">Log in</a>
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <img src="/static/images/logo/image6.png" class="img-fluid" alt="Logo">
         </div>
-    </header>
-    <main>
-        <!-- Breadcrumb Area S t a r t -->
-        <section class="breadcrumb-section breadcrumb-bg">
-            <div class="container">
-                <div class="breadcrumb-text">
-                    <h1 class="title wow fadeInUp" data-wow-delay="0.1s">Register</h1>
-                </div>
-            </div>
-        </section>
-        <!-- End-of Breadcrumb Area -->
-
-        <!-- Sign Up area S t a r t  -->
-        <div class="login-area section-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10">
-                        <div class="login-card">
-                            <!-- Logo -->
-                            <div class="logo mb-40">
-                                <a href="index.html" class="mb-30 d-block"><img src="/static/images/logo/image.png" alt="logo" style="width: 120px; height: auto;"></a>
-                            </div>
-                            <!-- Form -->
-                            <form action="#" method="POST">
-                                <div class="position-relative contact-form mb-24">
-                                    <label class="contact-label">Full Name</label>
-                                    <input class="form-control contact-input" type="text" placeholder="Enter Your Name">
-                                </div>
-                                <div class="position-relative contact-form mb-24">
-                                    <label class="contact-label">Email</label>
-                                    <input class="form-control contact-input" type="email" placeholder="Enter Your Email">
-                                </div>
-                                <div class="position-relative contact-form mb-24">
-                                    <label class="contact-label">Password</label>
-                                    <input class="form-control contact-input" type="password" placeholder="Enter Password">
-                                </div>
-                                <div class="position-relative contact-form mb-24">
-                                    <label class="contact-label">Confirm Password</label>
-                                    <input class="form-control contact-input" type="password" placeholder="Confirm Password">
-                                </div>
-
-                                <button type="submit" class="btn-primary-fill justify-content-center">
-                                    <span class="d-flex justify-content-center gap-6">
-                                        <span>Sign Up</span>
-                                    </span>
-                                </button>
-                            </form>
-
-                            <div class="login-footer">
-                                <div class="create-account">
-                                    <p>
-                                        Already have an account?
-                                        <a href="login.html">
-                                            <span>Login</span>
-                                        </a>
-                                    </p>
-                                </div>
-                                <a href="javascript:void(0)" class="login-btn d-flex align-items-center justify-content-center gap-10">
-                                    <img src="/static/images/icon/google-icon.png" alt="img" class="m-0">
-                                    <span> Sign up with Google</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-6 mb-3">
+            <img src="/static/images/gallery/apply_for_donation.jpg" class="img-fluid" alt="Donation Application">
         </div>
-        <!-- End-of Sign Up -->
-    </main>
-    <!-- Footer S t a r t -->
-    <footer>
-        <div class="footer-wrapper footer-bg-one">
-            <div class="container">
-                <!-- Content of footer remains unchanged -->
-            </div>
-        </div>
-    </footer>
-    <!-- End-of Footer -->
-    <!-- Scroll Up  -->
-    <div class="progressParent" id="back-top">
-        <svg class="backCircle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-        </svg>
     </div>
-    <!-- Add an overlay element -->
-    <div class="overlay"></div>
-    <!-- jquery-->
-    <script src="/static/js/jquery-3.7.0.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap-5.3.0.min.js"></script>
-    <!-- Plugin -->
-    <script src="/static/js/plugin.js"></script>
-    <!-- Main js-->
-    <script src="/static/js/main.js"></script>
-</body>
 
-</html>
+    <form action="/submit_application" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="orgName" class="form-label">Organization Name:</label>
+            <input type="text" class="form-control" id="orgName" name="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Contact" class="form-label">Organization Contact Details:</label>
+            <input type="text" class="form-control" id="Contact" name="Contact" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="missionStatement" class="form-label">Mission Statement:</label>
+            <textarea class="form-control" id="missionStatement" name="description" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="contactEmail" class="form-label">Contact Email:</label>
+            <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="IDDocument" class="form-label">Upload ID:</label>
+            <input type="file" class="form-control" id="IDDocument" name="ID Document" accept=".pdf,.jpg,.jpeg,.png" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="certificates" class="form-label">Upload Certificates/Proof of Address:</label>
+            <input type="file" class="form-control" id="certificates" name="certificates" accept=".pdf,.jpg,.jpeg,.png" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="logo" class="form-label">Upload Logo:</label>
+            <input type="file" class="form-control" id="logo" name="logo" accept=".jpg,.jpeg,.png" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Organization Address:</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,52 +1,59 @@
-<!-- templates/explore_charities.html -->
-{% extends "base.html" %} 
-{% block title %}Explore Charities{% endblock %} 
+{% extends "layout.html" %}
+
+{% block title %}
+Explore Charities
+{% endblock %}
+
 {% block content %}
-<h1 class="text-3xl font-bold mb-6 text-center">Explore Charities</h1>
+<div class="container mt-5">
+    <h1 class="text-center font-weight-bold mb-4">Explore Charities</h1>
 
-<div class="filter-section flex justify-between mb-6 w-[75vw] mx-auto">
-  <form method="post" class="flex w-full">
-    <input
-      type="text"
-      name="search"
-      placeholder="Search charities..."
-      class="w-3/4 p-2 pl-4 text-sm text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-    <button type="submit" class="w-1/4 bg-blue-600 text-white rounded-r-md p-2 hover:bg-blue-700">
-      Search
-    </button>
-  </form>
-
-  <!-- <select id="cause-filter" class="w-1/4 p-2 ml-4 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-    <option value="">All Causes</option>
-    dxxdfcghjkhilknmb
-    <option value="food">Food</option>
-    <option value="education">Education</option>
-    <option value="health">Health</option>
-  </select> -->
-</div>
-
-<div class="charities-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-[75vw] mx-auto">
-  {% for charity in charities %}
-  <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
-    <img src="{{ charity.logo }}" class="w-full h-48 object-cover mb-4 rounded-t-lg" />
-
-    <div class="flex-grow">
-      <h3 class="text-[#0e121b] text-xl font-bold mb-2">{{ charity.name }}</h3>
-      <p class="text-gray-600 mb-4">{{ charity.description[:100] }}...</p>
+    <div class="d-flex justify-content-center mb-4">
+        <form class="form-inline" method="post" style="width: 100%; max-width: 500px;">
+            <div class="input-group w-100">
+                <input
+                    type="text"
+                    name="search"
+                    class="form-control"
+                    placeholder="Search charities..."
+                    aria-label="Search charities"
+                >
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
     </div>
 
-    <div class="flex justify-between mt-4">
-     <a href="{{ url_for('investment_dashboard') }}"class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
-    View Charity Dashboard
-</a>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+        {% for charity in charities %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ charity.logo }}" class="card-img-top" alt="{{ charity.name }} Logo" style="height: 200px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ charity.name }}</h5>
+                    <p class="card-text">{{ charity.description[:100] }}...</p>
+                    <div class="mt-auto">
+                      <div class="row">
+                      <a href="https://paystack.com/pay/harvest-of-hope" class="btn btn-success" >
+                       Donate Now
+                        </a>
+                      </div>
 
+                        <div class="row">
+                        <a href="{{ url_for('investment_dashboard') }}" class="btn btn-primary col-6">
+                            View Dashboard
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=charity+{{ charity.location | urlencode }}" class="btn btn-info col-6">
+                          Get Directions
+                      </a>
+                      </div>
 
-      <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=216+14th+Ave+Roodepoort+2195&destination={{ charity.location }}&travelmode=driving" class="btn btn-primary text-blue-600 font-semibold hover:text-blue-800">
-        Get Directions
-      </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-  </div>
-  {% endfor %}
 </div>
 {% endblock %}

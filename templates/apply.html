@@ -71,50 +71,7 @@
     <h1>Donation Program Application</h1>
 </header>
 
-<div class="container">
-    <h2>Apply to Join Our Donation Program</h2>
-    <p>Please fill out the form below to apply for our donation program. We welcome small organizations and charities that align with our mission.</p>
 
-    <div class="image-container">
-        <div class="image-placeholder">
-            <img src="/static/images/logo/image6.png" alt="Logo" style="width: 300px; height: auto;">
-        </div>
-        <div class="image-placeholder">
-            <img src="/static/images/gallery/apply_for_donation.jpg" alt="Logo" style="width: 300px; height: auto;">
-        </div>
-    </div>
-
-    <form action="/submit_application" method="post" enctype="multipart/form-data">
-        <label for="orgName">Organization Name:</label>
-        <input type="text" id="orgName" name="name" required>
-
-        <label for="orgName">Organization Contact Details:</label>
-        <input type="text" id="Contact" name="Contact" required>
-
-        <label for="missionStatement">Mission Statement:</label>
-        <textarea id="missionStatement" name="description" rows="4" required></textarea>
-
-        <label for="contactEmail">Contact Email:</label>
-        <input type="email" id="contactEmail" name="contactEmail" required>
-
-        <label for="certificates">Upload ID :</label>
-        <input type="file" id="certificates" name="ID Document" accept=".pdf,.jpg,.jpeg,.png" required>
-
-
-        <label for="certificates">Upload Certificates/ Proof of Address:</label>
-        <input type="file" id="certificates" name="certificates" accept=".pdf,.jpg,.jpeg,.png" required>
-
-        <label for="certificates">Upload Logo:</label>
-        <input type="file" id="certificates" name="logo" accept=".jpg,.jpeg,.png" required>
-
-        <label for="orgName">Organization Address:</label>
-        <input type="text" id="orgName" name="location" required>
-
-
-
-        <input type="submit" value="Submit Application">
-    </form>
-</div>
 
 </body>
 </html>

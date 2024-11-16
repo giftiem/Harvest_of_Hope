@@ -4,9 +4,7 @@ import os
 
 app = Flask(__name__)
 
-# Mock charities data will be done with api most likely
-with open('charities.json', 'r') as f:
-    charities = json.load(f)
+
 
 @app.route('/')
 def home():
@@ -20,6 +18,10 @@ def charity_dashboard():
 def post_needs():
     return render_template('post_needs.html')
 
+
+@app.route('/blog')
+def blog_view():
+    return render_template('blog-details.html')
 
 @app.route('/share_story')
 def share_story():
@@ -119,12 +121,15 @@ def apply():
 def signup():
     return render_template('signup.html')
 
-@app.route('/about')
-def about():
+@app.route('/about_view', methods=['GET', 'POST'])
+def about_view():
     return render_template('about.html')
 
 @app.route('/view_charity/<int:charity_id>')
 def view_charity(charity_id):
+    with open('charities.json', 'r') as f:
+        charities = json.load(f)
+
     charity = next((c for c in charities if c['id'] == charity_id), None)
     return render_template('view_charity.html', charity=charity)
 
@@ -132,9 +137,11 @@ def view_charity(charity_id):
 def user_profile():
     return render_template('user_profile.html')
 
-@app.route('/make_donation')
+@app.route('/donate')
 def make_donation():
-    return render_template('make_donation.html')
+    with open('charities.json', 'r') as f:
+        charities = json.load(f)
+    return render_template('make_donation.html',charities=charities)
 
 @app.route('/user_dashboard')
 def user_dashboard():
@@ -179,5 +186,4 @@ def load_data():
         return json.load(f)
     
 if __name__ == '__main__':
-    load_data()
     app.run(debug=True)
