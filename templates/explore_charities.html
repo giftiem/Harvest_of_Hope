@@ -76,7 +76,7 @@ Explore Charities
 
                         <div class="row">
                         <a href="{{ url_for('investment_dashboard', charity_id=charity.id) }}" class="btn btn-primary col-6">
-                            View Dashboard
+                            View NGO
                         </a>
                         <a href="https://www.google.com/maps/search/?api=1&query=charity+{{ charity.title | urlencode   }}+{{ charity.contactCity | urlencode   }}+{{ charity.contactAddress | urlencode   }}" class="btn btn-info col-6">
                           Get Directions
