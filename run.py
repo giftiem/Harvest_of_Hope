@@ -207,7 +207,7 @@ def add_post():
         return redirect(url_for('feed'))
     return render_template('add_post.html')
 
-def fetch_projects(country_code, api_key, calls: int = 30):
+def fetch_projects(country_code, api_key, calls: int = 20):
     base_url = f"https://api.globalgiving.org/api/public/projectservice/countries/{country_code}/projects"
     headers = {
         'Accept': 'application/json'  # Explicitly request JSON response
@@ -219,7 +219,6 @@ def fetch_projects(country_code, api_key, calls: int = 30):
     has_next = True
 
     while (has_next and len(all_projects) <= calls):
-        print(f"Fetching projects from {base_url} with params {params}")
         response = requests.get(base_url,headers=headers, params=params)
         response.headers['Content-Type'] == 'application/json'
         data = response.json()
@@ -228,7 +227,6 @@ def fetch_projects(country_code, api_key, calls: int = 30):
 
         # Assuming JSON handling for simplicity; adapt if using XML
         all_projects.extend(data['projects']['project'])
-        print("im this big", len(all_projects))
         
         has_next = data['projects'].get('hasNext', False)
         if has_next:
