@@ -8,62 +8,11 @@
                 "active": false,
                 "title": "Fair Trade in Tourism South Africa (FTTSA)",
                 "summary": "We promote equitable and sustainable tourism in South Africa primarily by awarding a special 'fair trade' label to qualifying businesses.",
-                "contactAddress": "P.O. Box 11536",
-                "contactCity": "Hatfield, Pretoria",
-                "contactState": "Gauteng Province",
-                "contactPostal": "0028",
-                "contactCountry": "South Africa",
-                "contactUrl": "http://www.fairtourismsa.org.za",
-                "projectLink": "https://www.globalgiving.org/projects/fair-trade-in-tourism-south-africa-fttsa/",
-                "progressReportLink": "https://www.globalgiving.org/projects/fair-trade-in-tourism-south-africa-fttsa/updates/",
                 "themeName": "Economic Growth",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 13200.00,
-                "funding": 0.00,
-                "remaining": 13200.00,
-                "numberOfDonations": 0,
                 "status": "retired",
-                "need": "We target established tourism businesses and newer entrants into the industry, including community-based projects and entrepreneurs previously excluded from the formal economy.  Both target groups benefit from a \"stamp of approval\" and related marketing opportunities, and from knowing that they are contributing to socio-economic change in South Africa.  Tourists and tour operators also benefit by being able to choose good quality, fairly operated products for inclusion in travel itineraries.",
-                "longTermImpact": "We seek to aid socio-economic transformation in South Africa through the promotion and implementation of Fair Trade in Tourism principles and the award of a special label that certifies compliance with these principles and related criteria",
-                "activities": "To realize our objectives, we take on the following activities: marketing, awareness raising, product acquisition, certification, support to Trademark users, institutionalization of FTTSA, research and advocacy, and project management and monitoring.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/42/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/pfil/42/pict.jpg",
-                "imageGallerySize": 1,
-                "approvedDate": "2003-06-27T08:17:38-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Fair Trade in Tourism South Africa (FTTSA)",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/42/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -139,64 +88,11 @@
                 "active": false,
                 "title": "Urban Agriculture and Nature Conservation",
                 "summary": "Intensive training and follow-up support in Urban Agriculture and Horticulture for the poor in Cape Town, South Africa",
-                "contactAddress": "PO Box 44",
-                "contactAddress2": "Observatory",
-                "contactCity": "Cape Town",
-                "contactState": "Western Cape",
-                "contactPostal": "7935",
-                "contactCountry": "South Africa",
-                "contactUrl": "http://www.abalimi.org.za",
-                "projectLink": "https://www.globalgiving.org/projects/urban-agriculture-and-nature-conservation/",
-                "progressReportLink": "https://www.globalgiving.org/projects/urban-agriculture-and-nature-conservation/updates/",
                 "themeName": "Climate Action",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 48125.00,
-                "funding": 0.00,
-                "remaining": 48125.00,
-                "numberOfDonations": 2,
                 "status": "funded",
-                "need": "Beneficiaries live in poverty-stricken townships with high levels of unemployment, hunger and HIV/AIDS.  Most lack formal education or skills.  Communities lack housing and other essential resources.  Townships are built on infertile sand-dunes, where precious Cape Flora has been badly damaged.  Beneficiaries include women, youth, the elderly and persons both infected and affected by HIV/AIDS.",
-                "longTermImpact": "This project will help communities fight poverty and hunger, while conserving the environment.",
-                "activities": "To provide 200 disadvantaged people with intensive training in organic Urban Agriculture or Horticulture.  Each trainee will receive a starter pack with everything necessary to start their own gardens. Fieldwork support will be provided for one year.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/77/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/pfil/77/pict.jpg",
-                "imageGallerySize": 1,
-                "approvedDate": "2003-07-14T08:44:47-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 2,
-                "dateOfMostRecentReport": "2023-09-22T12:35:27-04:00",
-                "image": {
-                    "title": "Urban Agriculture and Nature Conservation",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/77/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -228,63 +124,11 @@
                 "active": false,
                 "title": "KHULISA: Youth Against Drugs in South Africa",
                 "summary": "Peer drug education and counseling in secondary schools in disadvantaged areas.",
-                "contactAddress": "P O Box 412560",
-                "contactAddress2": "Craighall",
-                "contactCity": "Johannesburg",
-                "contactState": "",
-                "contactPostal": "2024",
-                "contactCountry": "South Africa",
-                "contactUrl": "http://www.khulisaservices.co.za",
-                "projectLink": "https://www.globalgiving.org/projects/khulisa-youth-against-drugs-in-south-africa/",
-                "progressReportLink": "https://www.globalgiving.org/projects/khulisa-youth-against-drugs-in-south-africa/updates/",
                 "themeName": "Education",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 27258.00,
-                "funding": 0.00,
-                "remaining": 27258.00,
-                "numberOfDonations": 0,
                 "status": "retired",
-                "need": "Crime is a massive problem in South Africa and research continues to show a strong relationship between drugs and crime, especially amongst the youth.  School children are not exposed to adequate drug education and counseling facilities are scarce.  The MIB groups are a cost-effective way to provide both.  This proposal is for the support of these groups post training while they achieve self-sustainability.",
-                "longTermImpact": "The group also sets up a support group at each establishment, which provides alternative activities and peer counseling. Reach is 1,000 students per month per group.",
-                "activities": "Trained groups of youth leaders between 20 and 30 years visit schools and similar establishments delivering a first class drug education program to students with an emphasis on empowering them to make their own decisions.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/107/projdoc.doc",
                 "imageLink": "https://www.globalgiving.org/pfil/107/pict.jpg",
-                "imageGallerySize": 1,
-                "approvedDate": "2003-07-18T09:15:47-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "KHULISA: Youth Against Drugs in South Africa",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/107/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -312,63 +156,11 @@
                 "active": false,
                 "title": "Learning to Read in South Africa",
                 "summary": "Older people are empowered with literacy skills enabling them to claim their basic state pensions, help grandchildren with schoolwork and as provide better support HIV/AIDS sufferers and AIDS orphans.",
-                "contactAddress": "PO Box 10070",
-                "contactAddress2": "Marine Parade 4056",
-                "contactCity": "Durban",
-                "contactState": "Kwazulu Natal",
-                "contactPostal": "",
-                "contactCountry": "South Africa",
-                "contactUrl": "",
-                "projectLink": "https://www.globalgiving.org/projects/learning-to-read-in-south-africa/",
-                "progressReportLink": "https://www.globalgiving.org/projects/learning-to-read-in-south-africa/updates/",
                 "themeName": "Education",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 9995.00,
-                "funding": 504.00,
-                "remaining": 9491.00,
-                "numberOfDonations": 40,
                 "status": "funded",
-                "need": "The poverty of older men and women in three townships of Kwazulu Natal is exacerbated by the lack of information and abuse that they suffer. Older people are cheated out of their pensions, are made to sign wills and funeral insurance they have not fully understood, and are denied their right to participate in the governance of their country. Kwazulu Natal province is one of the hardest hit by the HIV/AIDS pandemic and older people are among the main carers of the sick and the orphaned.",
-                "longTermImpact": "Literacy skills will be developed at the same time as learning about health care, caring for PLWHAs and orphans and social security rights. The skills will also improve their participation in other community activities.",
-                "activities": "Our project will provide literacy for older people to increase their skills, build their confidence & access their rights. Lessons will be prepared & facilitated on themes chosen by older learners themselves that will help them in their daily lives.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/121/projdoc.doc",
                 "imageLink": "https://www.globalgiving.org/pfil/121/pict.jpg",
-                "imageGallerySize": 1,
-                "approvedDate": "2003-07-22T08:24:25-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Learning to Read in South Africa",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/121/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -400,62 +192,11 @@
                 "active": false,
                 "title": "Gardens for abused children of South Africa",
                 "summary": "Gardening provides a therapeutic outlet for young victims of domestic abuse, while empowering them to be self-sufficient by producing their own nourishment in an area where fresh food is scarce.",
-                "contactAddress": "Ravensmead Forum",
-                "contactAddress2": "156 Roebel Road",
-                "contactCity": "Ravensmead",
-                "contactState": "Cape Flats",
-                "contactPostal": "",
-                "contactCountry": "South Africa",
-                "contactUrl": "",
-                "projectLink": "https://www.globalgiving.org/projects/gardens-for-abused-children-of-south-africa/",
-                "progressReportLink": "https://www.globalgiving.org/projects/gardens-for-abused-children-of-south-africa/updates/",
                 "themeName": "Justice and Human Rights",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 2200.00,
-                "funding": 2200.00,
-                "remaining": 0.00,
-                "numberOfDonations": 24,
                 "status": "funded",
-                "need": "Citizens of the Cape Flats district of South Africa were forcefully removed from their ancestral homes during the apartheid regime and relocated to this area.  Unemployment and drug abuse are high, and organized crime and domestic abuse are considerable problems.  The Ravensmead Welfare and Health Forum offers counseling for abused mothers and children, and a gardening project for children.  Gardening equipment and supplies, such as rakes, seeds, and hoses are needed.",
-                "longTermImpact": "Children acquire skills to build gardens in their homes and feel the satisfaction of growing their own food. Most mothers who have fled domestic abuse are unemployed. Their monthly benefits of $15 do not cover the nutritional needs of their families.",
-                "activities": "Children spend their afternoons at a local center where they eat a hot meal, and learn from volunteer teachers to: prepare land for gardening; plant vegetables; and care for their garden and equipment.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/128/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/share/dfltpict.jpg",
-                "approvedDate": "2003-07-22T16:19:19-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Gardens for abused children of South Africa",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -483,62 +224,11 @@
                 "active": false,
                 "title": "Counseling South African youth with HIV+ parents",
                 "summary": "Women sew traditional dresses to raise funds for a peer-to-peer counselling program for children whose parents have HIV/AIDS.  Additional sewing machines will expand this self-sufficient program.",
-                "contactAddress": "Zwelethemba Center",
-                "contactAddress2": "518 Africa Road",
-                "contactCity": "Zwelethemba",
-                "contactState": "Worcester",
-                "contactPostal": "",
-                "contactCountry": "South Africa",
-                "contactUrl": "",
-                "projectLink": "https://www.globalgiving.org/projects/counseling-south-african-youth-with-hiv-parents/",
-                "progressReportLink": "https://www.globalgiving.org/projects/counseling-south-african-youth-with-hiv-parents/updates/",
                 "themeName": "Physical Health",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 2200.00,
-                "funding": 2248.00,
-                "remaining": 0.00,
-                "numberOfDonations": 62,
                 "status": "funded",
-                "need": "Zwelethemba, where the only source of income is from seasonal work on fruit farms, is one of the poorest areas of the Western Cape.  Unemployed women, who have been trained to use sewing machines, make traditional Xhosa dresses to sell to both tourists and women who wear them for family ceremonies.  The proceeds to fund local peer-to-peer counseling for youth whose parents have AIDS.  Five sewing machines are needed to expand this outreach.",
-                "longTermImpact": "Additional sewing machines will increase output, providing more funding for youth counseling program. Youth counselors range live with parents with AIDS, hand out pamphlets on safe sex, talk to peers & perform plays for local children about HIV/AIDS.",
-                "activities": "In the African tradition of \"Ubuntu\" (supporting one's community), the local women gather at the Zwelenthemba Center where their children are fed and looked after, and they can sew undisturbed.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/131/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/share/dfltpict.jpg",
-                "approvedDate": "2003-07-22T17:38:21-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Counseling South African youth with HIV+ parents",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -562,62 +252,11 @@
                 "active": false,
                 "title": "Educational toys for South African street children",
                 "summary": "The new preschool program at the Delft South housing project ensures children no longer enter grade school far behind their wealthier peers.  Educational toys will help them gain necessary skills.",
-                "contactAddress": "Ipuphalam Educare Centre",
-                "contactAddress2": "63 Bizet Street",
-                "contactCity": "Delft South 7100",
-                "contactState": "",
-                "contactPostal": "",
-                "contactCountry": "South Africa",
-                "contactUrl": "",
-                "projectLink": "https://www.globalgiving.org/projects/educational-toys-for-south-african-street-children/",
-                "progressReportLink": "https://www.globalgiving.org/projects/educational-toys-for-south-african-street-children/updates/",
                 "themeName": "Education",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 2200.00,
-                "funding": 3141.08,
-                "remaining": 0.00,
-                "numberOfDonations": 53,
                 "status": "funded",
-                "need": "The Delft South projects house families without formal employment.  Parents work as domestic workers, often living on less than $50/month.  There are no early childhood development programs, and young children roam the streets while parents work.  A two-room house is being used to prepare them for school.  Funding is needed to purchase educational toys and materials, and an awning to provide shade from the hot South African sun.",
-                "longTermImpact": "The children sing, memorize the alphabet, learn to write their name, and count. The addition of paints, chalkboards, puzzles, blocks, and other educational toys, will help further stimulate their minds, preparing them for school and a bright future.",
-                "activities": "Impoverished mothers with children walk the streets collecting youngsters t bring to school. There, a volunteer teacher, who has completed Waldorf training, prepares the children to attend formal school.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/132/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/share/dfltpict.jpg",
-                "approvedDate": "2003-07-22T17:59:11-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Educational toys for South African street children",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -645,62 +284,11 @@
                 "active": false,
                 "title": "Mobile Project Development Resource Unit (MPDRU)",
                 "summary": "Address the root causes of socio-economic challenges by providing community organisations and change agents in rural areas with apt information, best practices, networking and funding opportunities.",
-                "contactAddress": "P O Box 23640, Claremont, 7700",
-                "contactAddress2": "Stadium Main Bldg, Claremont",
-                "contactCity": "Cape Town",
-                "contactState": "Western Cape",
-                "contactPostal": "7700",
-                "contactCountry": "South Africa",
-                "contactUrl": "",
-                "projectLink": "https://www.globalgiving.org/projects/mobile-project-development-resource-unit-mpdru/",
-                "progressReportLink": "https://www.globalgiving.org/projects/mobile-project-development-resource-unit-mpdru/updates/",
                 "themeName": "Economic Growth",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 44000.00,
-                "funding": 0.00,
-                "remaining": 44000.00,
-                "numberOfDonations": 0,
                 "status": "retired",
-                "need": "Rural unemployment caused by technological progress in the agricultural sector forces unskilled families to migrate to larger urban centers causing urban homelessness and poverty. Many pursue criminal activities, abandon their children and fall prey to substance abuse. NPOs are mainly located in urban centers and address the symptoms of socio-economic problems, rather than the root cause. The MPDRU is designed to assist community initiatives in rural areas addressing socio-economic challenges.",
-                "longTermImpact": "The MPDRU is designed to assist community initiatives in rural areas addressing socio-economic challenges.",
-                "activities": "creative use of under-utilized resources and private/public sector partnerships; of IT, innovative resource mobilization, proactive approaches to socioeconomic/environmental challenges.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/198/projdoc.doc",
                 "imageLink": "https://www.globalgiving.org/share/dfltpict.jpg",
-                "approvedDate": "2003-07-31T12:52:16-04:00",
-                "modifiedDate": "2024-11-16T23:32:07-05:00",
-                "numberOfReports": 0,
-                "image": {
-                    "title": "Mobile Project Development Resource Unit (MPDRU)",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/share/dfltpict.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -732,64 +320,11 @@
                 "active": false,
                 "title": "ICT Sows Grassroots of South African Township",
                 "summary": "Training early childhood practitioners in Dikhatole Township, near Johannesburg, in science, technology and diversity training and empowering them with Information and Communication Technology (ICT).",
-                "contactAddress": "44 Central Street",
-                "contactAddress2": "Corner 10th Avenue, Houghton",
-                "contactCity": "Johannesburg",
-                "contactState": "",
-                "contactPostal": "2198",
-                "contactCountry": "South Africa",
-                "contactUrl": "http://www.ort.org.za",
-                "projectLink": "https://www.globalgiving.org/projects/ict-sows-grassroots-of-south-african-township/",
-                "progressReportLink": "https://www.globalgiving.org/projects/ict-sows-grassroots-of-south-african-township/updates/",
                 "themeName": "Economic Growth",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 82866.00,
-                "funding": 3870.00,
-                "remaining": 78996.00,
-                "numberOfDonations": 52,
                 "status": "funded",
-                "need": "Dikhatole suffers from chronic unemployment, no running water, electricity or basic housing.  For the few who attend, the quality of education in the pre-primary facilities is very poor.  ORT has created the Dikhatole Digital Village, with more than 90 Internet-enabled workstations, trained 2,400 children in basic computer use and is teaching teachers, school administrators and government employees to use ICT as an effective teaching and implementation tool.",
-                "longTermImpact": "Training early childhood practitioners and trainers from Dikhatole in science, technology and diversity training.",
-                "activities": "Training suitable trainers from the Gauteng Department of Education to provide the science, technology and diversity training to improve childhood services and education.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/246/projdoc.doc",
                 "imageLink": "https://www.globalgiving.org/pfil/246/pict.jpg",
-                "imageGallerySize": 1,
-                "approvedDate": "2003-08-26T00:54:00-04:00",
-                "modifiedDate": "2024-11-16T23:32:08-05:00",
-                "numberOfReports": 1,
-                "dateOfMostRecentReport": "2006-08-31T13:02:24-04:00",
-                "image": {
-                    "title": "ICT Sows Grassroots of South African Township",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/246/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
-                },
                 "themes": {
                     "theme": [
                         {
@@ -817,32 +352,11 @@
                 "active": false,
                 "title": "Bring Fair Trade to 5 Communities in South Africa",
                 "summary": "Help 5 poor communities and their workers benefit from South Africa's growing tourism industry through training and market access.",
-                "contactName": "Jennifer Seif",
-                "contactTitle": "Executive Director",
-                "contactAddress": "P.O. Box 11536",
-                "contactCity": "Hatfield, Pretoria",
-                "contactState": "Gauteng Province",
-                "contactPostal": "0028",
-                "contactCountry": "South Africa",
-                "contactUrl": "http://www.fairtourismsa.org.za",
-                "projectLink": "https://www.globalgiving.org/projects/poverty-in-africa-1/",
-                "progressReportLink": "https://www.globalgiving.org/projects/poverty-in-africa-1/updates/",
                 "themeName": "Economic Growth",
                 "country": "South Africa",
                 "iso3166CountryCode": "ZA",
-                "region": "Africa",
-                "goal": 15000.00,
-                "funding": 306.00,
-                "remaining": 14694.00,
-                "numberOfDonations": 3,
                 "status": "funded",
-                "need": "Tourism is a major driver of the post-apartheid economy, and many poor communities are looking to tourism to generate income and employment.  However, communities often lack the skills, knowledge, networks and finance required to develop viable and sustainable tourism ventures. A local nonprofit organization, Fair Trade in Tourism South Africa (FTTSA), needs $15,000 to directly support 5 rural, community-based tourism initiatives with capacity-building and market access.",
-                "longTermImpact": "Job and income creation lead to more secure and sustainable livelihoods, which in turn have a positive impact on conservation of natural and cultural resources.",
-                "activities": "Training and capacity-building for men, women and youth living in rural and semi-rural communities where tourism has the potential to improve livelihoods.",
-                "additionalDocumentation": "https://www.globalgiving.org/pfil/375/projdoc.pdf",
                 "imageLink": "https://www.globalgiving.org/pfil/375/pict.jpg",
-                "imageGallerySize": 3,
-                "approvedDate": "2006-04-17T18:17:47-04:00",
                 "donationOptions": {
                     "donationOption": [
                         {
@@ -862,39 +376,6 @@
                             "description": "Mentoring and training for 1 community venture."
                         }
                     ]
-                },
-                "modifiedDate": "2024-11-16T23:32:08-05:00",
-                "numberOfReports": 1,
-                "dateOfMostRecentReport": "2007-07-25T17:20:52-04:00",
-                "image": {
-                    "title": "Bring Fair Trade to 5 Communities in South Africa",
-                    "imagelink": [
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_grid1.jpg",
-                            "size": "small"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_thumbnail.jpg",
-                            "size": "thumbnail"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_med.jpg",
-                            "size": "medium"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_grid7.jpg",
-                            "size": "large"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_large.jpg",
-                            "size": "extraLarge"
-                        },
-                        {
-                            "url": "https://www.globalgiving.org/pfil/375/pict_original.jpg",
-                            "size": "original"
-                        }
-                    ],
-                    "id": 0
                 },
                 "themes": {
                     "theme": [

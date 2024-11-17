@@ -38,21 +38,37 @@ def investment_dashboard():
 
 @app.route('/explore_charities', methods=['GET', 'POST'])
 def explore_charities():
-    # needs_list = ['Shelter', 'Medical Aid', 'Water', 'More Clothes']
-    charities= fetch_projects("ZA", "207d0f21-65f0-4a5d-8084-5d972d341309")
-    needs_list = [theme['name'] for charity in charities for theme in charity['themes']['theme']]    
-
-
+    country_code = "ZA"  # Default country code
+    charities = fetch_projects(country_code, "207d0f21-65f0-4a5d-8084-5d972d341309")
+    needs_list = list(set(theme['name'] for charity in charities for theme in charity['themes']['theme']))
 
     search_results = []
     if request.method == 'POST':
         search_term = request.form.get('search')
-        for item in charities:
-            print(item)
-        search_results = [item for item in charities if search_term.lower() in item["location"].lower()]
-        return render_template('explore_charities.html', charities=search_results)
+        country_filter = request.form.get('country')
+        needs_filter = request.form.getlist('needs', [])
+        print('Im this small',len(needs_filter))
+        if country_filter and country_filter != country_code:
+            country_code = country_filter
+            charities = fetch_projects(country_code, "207d0f21-65f0-4a5d-8084-5d972d341309")
+            needs_list = list(set(theme['name'] for charity in charities for theme in charity['themes']['theme']))
+        if needs_filter[0] != 'all':
+            search_results = [
+                item for item in charities
+                if (not search_term or search_term.lower() in item["title"].lower())
+                and (not country_filter or item["iso3166CountryCode"] == country_filter)
+                and (not needs_filter or any(theme['name'] in needs_filter for theme in item['themes']['theme']))
+            ]
+        else:
+            search_results = [
+                item for item in charities
+                if (not search_term or search_term.lower() in item["title"].lower())
+                and (not country_filter or item["iso3166CountryCode"] == country_filter)
+            ]
 
-    return render_template('explore_charities.html', charities=charities,needs_list=needs_list)
+        return render_template('explore_charities.html', charities=search_results, needs_list=needs_list)
+
+    return render_template('explore_charities.html', charities=charities, needs_list=needs_list)
 
 @app.route('/submit_application', methods=['GET', 'POST'])
 def save_charities():
@@ -188,7 +204,7 @@ def add_post():
         return redirect(url_for('feed'))
     return render_template('add_post.html')
 
-def fetch_projects(country_code, api_key, calls: int = 3):
+def fetch_projects(country_code, api_key, calls: int = 30):
     base_url = f"https://api.globalgiving.org/api/public/projectservice/countries/{country_code}/projects"
     headers = {
         'Accept': 'application/json'  # Explicitly request JSON response
@@ -200,14 +216,16 @@ def fetch_projects(country_code, api_key, calls: int = 3):
     has_next = True
 
     while (has_next and len(all_projects) <= calls):
+        print(f"Fetching projects from {base_url} with params {params}")
         response = requests.get(base_url,headers=headers, params=params)
         response.headers['Content-Type'] == 'application/json'
         data = response.json()
-        print(data) 
+    
 
 
         # Assuming JSON handling for simplicity; adapt if using XML
         all_projects.extend(data['projects']['project'])
+        print("im this big", len(all_projects))
         
         has_next = data['projects'].get('hasNext', False)
         if has_next:

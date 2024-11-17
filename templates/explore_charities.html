@@ -10,48 +10,46 @@ Explore Charities
 
     <div class="container">
         <div class="row mb-4">
-            <form class="form-inline" method="post" style="width: 100%;">
-                <!-- Search Input -->
-                <div class="col  mb-2 mb-md-0">
-                    <div class="input-group">
-                        <input
-                            type="text"
-                            name="search"
-                            class="form-control"
-                            placeholder="Search charities..."
-                            aria-label="Search charities"
-                        >
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Search</button>
+            <form class="form" method="post" style="width: 100%;">
+                <div class="row mb-3">
+                    <!-- Search Input -->
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Search charities..." aria-label="Search charities">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Country Filter -->
+                    <div class="col-md-6">
+                        <select class="form-select" name="country">
+                            <option value="ZA">South Africa</option>
+                            <option value="US">United States</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <!-- Checkboxes -->
+                <h3 class="text-center mb-3">Filter by Needs</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="AllChecks" name="needs" value="all">
+                            <label class="form-check-label" for="AllChecks">All Needs</label>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Checkboxes -->
-                 <h3 class="d-flex justify-content-center align-items-center ">Filter by Needs</h3>
-                <div class="col d-flex justify-content-center align-items-center">
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="foodCheckbox" name="needs" value="Food">
-                        <label class="form-check-label" for="foodCheckbox">Food</label>
+                <div class="row">
+                    {% for need in needs_list %}
+                    <div class="col-md-4 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="{{ need  + 'Checkbox'}}" name="needs" value="{{ need }}">
+                            <label class="form-check-label" for="{{ need  + 'Checkbox'}}">{{ need }}</label>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="clothesCheckbox" name="needs" value="Clothes">
-                        <label class="form-check-label" for="clothesCheckbox">Clothes</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="educationCheckbox" name="needs" value="Education">
-                        <label class="form-check-label" for="educationCheckbox">Education</label>
-                    </div>
-                </div>
-    
-                <!-- Dropdown for Needs -->
-                <div class="col">
-                    <select class="form-select" name="additionalNeeds" >
-                        {% for need in needs_list %}
-                        <option value="{{ need }}">{{ need }}</option>
-                        {% endfor %}
-                    </select>
+                    {% endfor %}
                 </div>
             </form>
         </div>
