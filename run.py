@@ -36,6 +36,10 @@ def donation_management():
 def investment_dashboard():
     return render_template('investment_dashboard.html')
 
+@app.route('/thank-you')
+def signed_up():
+    return render_template('thank-you.html')
+
 @app.route('/explore_charities', methods=['GET', 'POST'])
 def explore_charities():
     country_code = "ZA"  # Default country code
