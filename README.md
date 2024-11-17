@@ -11,7 +11,7 @@ Follow these steps to get Harvest of Hope up and running on your local machine.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/harvest-of-hope.git
+   git clone git@github.com:giftiem/Harvest_of_Hope.git
    cd harvest-of-hope
    ```
 
