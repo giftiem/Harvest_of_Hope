@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
+import requests
 import os
 
 app = Flask(__name__)
@@ -37,8 +38,11 @@ def investment_dashboard():
 
 @app.route('/explore_charities', methods=['GET', 'POST'])
 def explore_charities():
-    with open('charities.json', 'r') as f:
-        charities = json.load(f)
+    # needs_list = ['Shelter', 'Medical Aid', 'Water', 'More Clothes']
+    charities= fetch_projects("ZA", "207d0f21-65f0-4a5d-8084-5d972d341309")
+    needs_list = [theme['name'] for charity in charities for theme in charity['themes']['theme']]    
+
+
 
     search_results = []
     if request.method == 'POST':
@@ -48,7 +52,7 @@ def explore_charities():
         search_results = [item for item in charities if search_term.lower() in item["location"].lower()]
         return render_template('explore_charities.html', charities=search_results)
 
-    return render_template('explore_charities.html', charities=charities)
+    return render_template('explore_charities.html', charities=charities,needs_list=needs_list)
 
 @app.route('/submit_application', methods=['GET', 'POST'])
 def save_charities():
@@ -67,6 +71,8 @@ def save_charities():
         if file.filename == '':
             return 'No selected file'
         
+
+
 
 
         if file:
@@ -143,6 +149,8 @@ def make_donation():
         charities = json.load(f)
     return render_template('make_donation.html',charities=charities)
 
+
+
 @app.route('/user_dashboard')
 def user_dashboard():
     return render_template('user_dashboard.html')
@@ -180,10 +188,40 @@ def add_post():
         return redirect(url_for('feed'))
     return render_template('add_post.html')
 
+def fetch_projects(country_code, api_key, calls: int = 3):
+    base_url = f"https://api.globalgiving.org/api/public/projectservice/countries/{country_code}/projects"
+    headers = {
+        'Accept': 'application/json'  # Explicitly request JSON response
+    }
+    params = {
+        'api_key': api_key
+    }
+    all_projects = []
+    has_next = True
+
+    while (has_next and len(all_projects) <= calls):
+        response = requests.get(base_url,headers=headers, params=params)
+        response.headers['Content-Type'] == 'application/json'
+        data = response.json()
+        print(data) 
+
+
+        # Assuming JSON handling for simplicity; adapt if using XML
+        all_projects.extend(data['projects']['project'])
+        
+        has_next = data['projects'].get('hasNext', False)
+        if has_next:
+            params['nextProjectId'] = data['projects']['nextProjectId']
+
+    return all_projects
 
 def load_data():
     with open('charities.json', 'r') as f:
         return json.load(f)
     
+    
+    
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    # fetch_projects("ZA", "207d0f21-65f0-4a5d-8084-5d972d341309")
+    app.run(host="0.0.0.0", port=5000,debug=True)
+
