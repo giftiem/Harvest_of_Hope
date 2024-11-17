@@ -46,7 +46,10 @@ def explore_charities():
     if request.method == 'POST':
         search_term = request.form.get('search')
         country_filter = request.form.get('country')
-        needs_filter = request.form.getlist('needs', [])
+        needs_filter = request.form.getlist('needs')
+        needs_filter.append('all')
+        
+        
         print('Im this small',len(needs_filter))
         if country_filter and country_filter != country_code:
             country_code = country_filter
