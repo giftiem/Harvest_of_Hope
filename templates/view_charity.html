@@ -1,25 +1,85 @@
-<!-- templates/view_charity.html -->
-{% extends "base.html" %}
-{% block title %}{{ charity.name }}{% endblock %}
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
 {% block content %}
-<h1>{{ charity.name }}</h1>
-<img src="{{ charity.logo }}" alt="{{ charity.name }} Logo" class="charity-logo">
-<p>{{ charity.description }}</p>
-<h2>Current Needs</h2>
-<ul>
-    {% for need in charity.needs %}
-    <li>{{ need }}</li>
-    {% endfor %}
-</ul>
-<h2>Impact Stories</h2>
-<div class="stories-grid">
-    {% for story in charity.stories %}
-    <div class="story-card">
-        <h3>{{ story.title }}</h3>
-        <p>{{ story.content[:100] }}...</p>
-        <a href="#" class="btn">Read More</a>
+
+<div class="container my-4">
+    <h1 class="text-center mb-4">NGO Dashboard</h1>
+    
+    {% if project %}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ project.title }}</h2>
+            <p class="card-text">{{ project.summary }}</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Project Details</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Country:</strong> {{ project.country }}</li>
+                        <li class="list-group-item"><strong>Region:</strong> {{ project.region }}</li>
+                        <li class="list-group-item"><strong>Theme:</strong> {{ project.themeName }}</li>
+                        <li class="list-group-item"><strong>Status:</strong> {{ project.status }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Funding</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Goal:</strong> ${{ project.goal }}</li>
+                        <li class="list-group-item"><strong>Funding:</strong> ${{ project.funding }}</li>
+                        <li class="list-group-item"><strong>Remaining:</strong> ${{ project.remaining }}</li>
+                        <li class="list-group-item"><strong>Number of Donations:</strong> {{ project.numberOfDonations }}</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h4>Funding Progress</h4>
+                <canvas id="fundingChart"></canvas>
+            </div>
+            
+            <div class="mt-4">
+                <h4>Project Description</h4>
+                <p><strong>Need:</strong> {{ project.need }}</p>
+                <p><strong>Activities:</strong> {{ project.activities }}</p>
+                <p><strong>Long-term Impact:</strong> {{ project.longTermImpact }}</p>
+            </div>
+            
+            <div class="mt-4">
+                <h4>Contact Information</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Address:</strong> {{ project.contactAddress }}, {{ project.contactCity }}, {{ project.contactState }}, {{ project.contactCountry }}</li>
+                    <li class="list-group-item"><strong>URL:</strong> <a href="{{ project.contactUrl }}" target="_blank">{{ project.contactUrl }}</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    {% endfor %}
+    {% else %}
+    <p>No project data available.</p>
+    {% endif %}
 </div>
-<a href="{{ url_for('make_donation') }}" class="btn">Make a Donation</a>
+
+<a href="https://paystack.com/pay/harvest-of-hope" class="btn-primary-fill pill-btn col-12">Donate Now</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var ctx = document.getElementById('fundingChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Funding', 'Remaining'],
+                datasets: [{
+                    data: [{{ project.funding }}, {{ project.remaining }}],
+                    backgroundColor: ['#36a2eb', '#ff6384']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    });
+</script>
+
 {% endblock %}
+

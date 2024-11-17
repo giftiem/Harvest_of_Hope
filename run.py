@@ -32,9 +32,14 @@ def share_story():
 def donation_management():
     return render_template('donation_management.html')
 
-@app.route('/investment_dashboard')
-def investment_dashboard():
-    return render_template('investment_dashboard.html')
+
+@app.route('/investment_dashboard/<int:charity_id>')
+def investment_dashboard(charity_id):
+    # charity_id = request.args.get('charity_id')
+    print("im here", charity_id)
+    request_data = fetch_specific_project(charity_id, "207d0f21-65f0-4a5d-8084-5d972d341309")   
+    print(request_data)
+    return render_template('view_charity.html', project=request_data['projects']['project'][0])
 
 @app.route('/thank-you')
 def signed_up():
@@ -154,13 +159,14 @@ def signup():
 def about_view():
     return render_template('about.html')
 
-@app.route('/view_charity/<int:charity_id>')
-def view_charity(charity_id):
-    with open('charities.json', 'r') as f:
-        charities = json.load(f)
+@app.route('/ngo/<int:ngo_id>')
+def ngo_dashboard(ngo_id):
+    
+    # project = next((p for p in projects if p['id'] == ngo_id), None)
 
-    charity = next((c for c in charities if c['id'] == charity_id), None)
-    return render_template('view_charity.html', charity=charity)
+    return render_template('view_charity.html', project=project)
+
+
 
 @app.route('/user_profile')
 def user_profile():
@@ -238,6 +244,22 @@ def fetch_projects(country_code, api_key, calls: int = 20):
 
     return all_projects
 
+def fetch_specific_project(id, api_key):
+    base_url = f"https://api.globalgiving.org/api/public/projectservice/projects/collection/ids?projectIds={id}"
+    headers = {
+        'Accept': 'application/json'  # Explicitly request JSON response
+    }
+    params = {
+        'api_key': api_key
+
+    }
+
+    response = requests.get(base_url,headers=headers, params=params)
+    response.headers['Content-Type'] == 'application/json'
+    data = response.json()
+    
+    return data
+
 def load_data():
     with open('charities.json', 'r') as f:
         return json.load(f)
@@ -245,6 +267,5 @@ def load_data():
     
     
 if __name__ == '__main__':
-    # fetch_projects("ZA", "207d0f21-65f0-4a5d-8084-5d972d341309")
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000,debug=True)
 
